@@ -58,5 +58,10 @@ namespace PosSystem
             user.Show();
             this.Hide();
         }
+
+        private void HomeAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
