@@ -1,6 +1,6 @@
 ﻿namespace PosSystem
 {
-    partial class HomeUser
+    partial class UserHome
     {
         /// <summary>
         /// Required designer variable.

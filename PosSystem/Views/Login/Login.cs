@@ -9,7 +9,7 @@ namespace PosSystem
 {
     public partial class LoginForm : Form
     {
-        Database dbCon = Database.Instance();
+        Database dbCon = new Database();
 
         public LoginForm()
         {
@@ -50,12 +50,12 @@ namespace PosSystem
                 {
                     if (_role == "ADMIN")
                     {
-                        HomeAdmin homeAdmin = new HomeAdmin();
+                        AdminHome homeAdmin = new AdminHome();
                         homeAdmin.Show();
                         this.Hide();
                     } else
                     {
-                        HomeUser homeUser = new HomeUser();
+                        UserHome homeUser = new UserHome();
                         homeUser.Show();
                         this.Hide();
                     }
@@ -69,14 +69,14 @@ namespace PosSystem
 
             if (username == "Admin" && password == "admin123")
             {
-                HomeAdmin objAhome = new HomeAdmin();
+                AdminHome objAhome = new AdminHome();
                 objAhome.Show();
                 this.Hide();
             }
             else if((username=="Isuru" && password == "Isuru123") || (username=="Isira" && password == "Isira123"))
             {
                 
-                HomeUser objUhome = new HomeUser();
+                UserHome objUhome = new UserHome();
                 objUhome.Show();
                 this.Hide();
             }

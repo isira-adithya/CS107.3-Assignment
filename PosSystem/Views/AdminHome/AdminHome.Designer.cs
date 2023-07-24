@@ -1,6 +1,6 @@
 ﻿namespace PosSystem
 {
-    partial class HomeAdmin
+    partial class AdminHome
     {
         /// <summary>
         /// Required designer variable.

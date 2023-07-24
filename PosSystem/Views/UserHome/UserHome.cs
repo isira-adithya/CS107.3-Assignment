@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PosSystem
 {
-    public partial class HomeUser : Form
+    public partial class UserHome : Form
     {
-        public HomeUser()
+        public UserHome()
         {
             InitializeComponent();
         }

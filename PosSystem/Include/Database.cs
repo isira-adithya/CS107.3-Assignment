@@ -26,13 +26,6 @@ namespace PosSystem
             Connection = new MySqlConnection(connstring);
         }
 
-        public static Database Instance()
-        {
-            if (_instance == null)
-                _instance = new Database();
-            return _instance;
-        }
-
         public bool IsConnected()
         {
             if (Connection.State.ToString() == "Closed")

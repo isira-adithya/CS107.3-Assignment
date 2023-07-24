@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PosSystem
 {
-    public partial class HomeAdmin : Form
+    public partial class AdminHome : Form
     {
-        public HomeAdmin()
+        public AdminHome()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace PosSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            EditProductDetail Eproduct = new EditProductDetail();
+            EditProduct Eproduct = new EditProduct();
             Eproduct.Show();
             this.Hide();
         }

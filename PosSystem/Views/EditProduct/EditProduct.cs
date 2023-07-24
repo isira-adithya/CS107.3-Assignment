@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PosSystem
 {
-    public partial class EditProductDetail : Form
+    public partial class EditProduct : Form
     {
-        public EditProductDetail()
+        public EditProduct()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace PosSystem
 {
-    partial class EditProductDetail
+    partial class EditProduct
     {
         /// <summary>
         /// Required designer variable.
