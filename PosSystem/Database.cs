@@ -6,23 +6,26 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data;
 using System.Data.Common;
+using System.Windows.Forms;
 
 namespace PosSystem
 {
     internal class Database
     {
-        private Database()
-        {
-        }
-
-        public string Server { get; set; }
-        public string DatabaseName { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
+        private string Server = "localhost";
+        private string DatabaseName = "pos";
+        private string UserName = "root";
+        private string Password = "";
+        private static Database _instance = null;
 
         public MySqlConnection Connection { get; set; }
 
-        private static Database _instance = null;
+        public Database()
+        {
+            string connstring = string.Format("Server={0}; database={1}; UID={2}; password={3}", Server, DatabaseName, UserName, Password);
+            Connection = new MySqlConnection(connstring);
+        }
+
         public static Database Instance()
         {
             if (_instance == null)
@@ -30,21 +33,35 @@ namespace PosSystem
             return _instance;
         }
 
-        public bool IsConnect()
+        public bool IsConnected()
         {
-            if (Connection == null)
+            if (Connection.State.ToString() == "Closed")
             {
-                if (String.IsNullOrEmpty(DatabaseName))
-                    return false;
-                string connstring = string.Format("Server={0}; database={1}; UID={2}; password={3}", Server, DatabaseName, UserName, Password);
-                Connection = new MySqlConnection(connstring);
-                Connection.Open();
+                MessageBox.Show("Database is not connected!", "MySQL Client");
+                return false;
+            } else
+            {
+                return true;
             }
+        }
 
+        public bool Connect()
+        {
+            try
+            {
+                if (Connection.State.ToString() == "Closed")
+                {
+                    Connection.Open();
+                } 
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Something went wrong while connecting to the database. \n " + ex.ToString(), "MySQL Client");
+                return false;
+            }
             return true;
         }
 
-        public void Close()
+        public void Disconnect()
         {
             Connection.Close();
         }

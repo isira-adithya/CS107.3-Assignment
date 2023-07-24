@@ -20,26 +20,22 @@ CREATE TABLE users (
 	PRIMARY KEY (id)
 );
 
-/* Creating the customers table */
-CREATE TABLE customers (
-	id INT NOT NULL AUTO_INCREMENT, 
-	first_name TEXT NOT NULL, 
-	last_name TEXT NOT NULL, 
-	phone_number TEXT NOT NULL, 
-	address TEXT NOT NULL, 
-	email TEXT NOT NULL, 
-	PRIMARY KEY (id)
-);
-
 /* Creating the orders table */
 CREATE TABLE orders (
 	id INT NOT NULL AUTO_INCREMENT,
-	customerId INT,
+	customer_first_name TEXT NOT NULL, 
+	customer_last_name TEXT NOT NULL, 
+	customer_phone_number TEXT NOT NULL, 
+	customer_address TEXT NOT NULL, 
+	customer_email TEXT NOT NULL, 
 	products JSON NOT NULL, 
 	date_time DATETIME NOT NULL, 
 	phone_number TEXT NOT NULL, 
 	amount DOUBLE NOT NULL, 
 	paymentMethod TEXT NOT NULL, 
-	PRIMARY KEY (id),
-	FOREIGN KEY (customerId) REFERENCES customers(id)
+	PRIMARY KEY (id)
 );
+
+-- Adding Users
+INSERT INTO users(first_name, last_name, username, password, email, role) VALUES ("Isira", "Adithya", "isira_adithya", "pass123", "me@isiraadithya.com", "ADMIN");
+INSERT INTO users(first_name, last_name, username, password, email, role) VALUES ("Isira", "Adithya (User Account)", "isira_adithya_user", "pass123", "user@isiraadithya.com", "USER");

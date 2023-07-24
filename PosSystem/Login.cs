@@ -1,37 +1,37 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace PosSystem
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
-        public Login()
+        Database dbCon = Database.Instance();
+
+        public LoginForm()
         {
             InitializeComponent();
+            dbCon.Connect();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
             string username;
             string password;
             string _username = "";
             string _password = "";
+            string _role = "";
 
-            username = textBox1.Text;
-            password = textBox2.Text;
+            username = usernameTextBox.Text;
+            password = passwordTextBox.Text;
 
 
-            var dbCon = Database.Instance();
-            dbCon.Server = "localhost";
-            dbCon.DatabaseName = "pos";
-            dbCon.UserName = "root";
-            dbCon.Password = "";
-            if (dbCon.IsConnect())
+            if (dbCon.IsConnected())
             {
-                string query = $"SELECT * FROM test WHERE username='{username}';";
+                string query = $"SELECT * FROM users WHERE username='{username}';";
                 var cmd = new MySqlCommand(query, dbCon.Connection);
                 var reader = cmd.ExecuteReader();
                 bool isLoggedIn = false;
@@ -39,6 +39,7 @@ namespace PosSystem
                 {
                     _username = reader.GetString(3);
                     _password = reader.GetString(4);
+                    _role = reader.GetString(6);
                     if (_password == password)
                     {
                         isLoggedIn = true;
@@ -47,7 +48,7 @@ namespace PosSystem
                 reader.Close();
                 if (isLoggedIn)
                 {
-                    if ("Role" == "Admin")
+                    if (_role == "ADMIN")
                     {
                         HomeAdmin homeAdmin = new HomeAdmin();
                         homeAdmin.Show();
@@ -82,15 +83,11 @@ namespace PosSystem
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void clearButton_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            textBox2.Text = "";
+            usernameTextBox.Text = "";
+            passwordTextBox.Text = "";
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
