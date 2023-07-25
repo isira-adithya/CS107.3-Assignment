@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,15 +17,16 @@ namespace PosSystem
         private Database db = new Database();
         string EProdName, NProdName;
         string EProdDescrip, NProdDescrip;
-        int EQty, NQty;
+        int EQty, EId, NQty;
         double EPrice, NPrice;
+
         public EditProduct()
         {
             InitializeComponent();
             db.Connect();
         }
 
-        private void product_add_Click(object sender, EventArgs e)
+        private void UpdateDetailsButton_Click(object sender, EventArgs e)
         {
 
             // below are the new product details(N)for New Details
@@ -33,6 +35,24 @@ namespace PosSystem
             NQty = int.Parse(NQuanty.Value.ToString());
             NPrice = double.Parse(NPrc.Text);
 
+            string query = $"UPDATE products SET name=@val1, quantity=@val2, price=@val3, description=@val4 WHERE id=@val5";
+            MySqlCommand cmd = new MySqlCommand(query, db.Connection);
+            cmd.Parameters.AddWithValue("@val1", NProdName);
+            cmd.Parameters.AddWithValue("@val2", NQty.ToString());
+            cmd.Parameters.AddWithValue("@val3", NPrice.ToString());
+            cmd.Parameters.AddWithValue("@val4", NProdDescrip);
+            cmd.Parameters.AddWithValue("@val5", EId.ToString());
+            int result = cmd.ExecuteNonQuery();
+
+            if (result == 1)
+            {
+                MessageBox.Show("Product has been updated.", "POS");
+                AddProCancel_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong.", "POS");
+            }
 
         }
 
@@ -55,6 +75,7 @@ namespace PosSystem
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read()) {
+                    EId = int.Parse(reader.GetString(0));
                     EProdName = reader.GetString(1);
                     EQty = int.Parse(reader.GetString(2));
                     EPrice = double.Parse(reader.GetString(3));
@@ -63,10 +84,10 @@ namespace PosSystem
 
                 reader.Close();
 
-                ExistingProductNameLabel.Text = EProdName;
-                ExistingProductDescriptionLabel.Text = EProdDescrip;
-                ExistingProductPriceLabel.Text = EPrice.ToString();
-                ExistingProductQuantityLabel.Text = EQty.ToString();
+                NProduct_Name.Text = EProdName;
+                NDescription.Text = EProdDescrip;
+                NQuanty.Value = EQty;
+                NPrc.Text = EPrice.ToString();
             }
         }
 
