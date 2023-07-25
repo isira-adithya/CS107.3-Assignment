@@ -16,7 +16,6 @@ namespace PosSystem
         private string DatabaseName = "pos";
         private string UserName = "root";
         private string Password = "";
-        private static Database _instance = null;
 
         public MySqlConnection Connection { get; set; }
 

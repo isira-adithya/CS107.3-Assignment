@@ -31,8 +31,10 @@ namespace PosSystem
 
             if (dbCon.IsConnected())
             {
-                string query = $"SELECT * FROM users WHERE username='{username}';";
+                string query = $"SELECT * FROM users WHERE username=@val1;";
                 var cmd = new MySqlCommand(query, dbCon.Connection);
+                cmd.Parameters.AddWithValue("@val1", username);
+
                 var reader = cmd.ExecuteReader();
                 bool isLoggedIn = false;
                 while (reader.Read())
