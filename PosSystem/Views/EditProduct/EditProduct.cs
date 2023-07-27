@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -36,7 +37,7 @@ namespace PosSystem
             NPrice = double.Parse(NPrc.Text);
 
             string query = $"UPDATE products SET name=@val1, quantity=@val2, price=@val3, description=@val4 WHERE id=@val5";
-            MySqlCommand cmd = new MySqlCommand(query, db.Connection);
+            SqlCommand cmd = new SqlCommand(query, db.Connection);
             cmd.Parameters.AddWithValue("@val1", NProdName);
             cmd.Parameters.AddWithValue("@val2", NQty.ToString());
             cmd.Parameters.AddWithValue("@val3", NPrice.ToString());
@@ -69,10 +70,10 @@ namespace PosSystem
             if (db.IsConnected())
             {
                 string query = SearchBoxTextBox.Text;
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM products WHERE name LIKE @val1", db.Connection);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM products WHERE name LIKE @val1", db.Connection);
                 cmd.Parameters.AddWithValue("@val1", "%" + query + "%");
 
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read()) {
                     EId = int.Parse(reader.GetString(0));

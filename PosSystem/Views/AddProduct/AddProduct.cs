@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,7 @@ namespace PosSystem
             if (db.IsConnected())
             {
                 string query = $"INSERT INTO products(name, quantity, price, description) VALUES (@val1, @val2, @val3, @val4);";
-                MySqlCommand cmd = new MySqlCommand(query, db.Connection);
+                SqlCommand cmd = new SqlCommand(query, db.Connection);
                 cmd.Parameters.AddWithValue("@val1", ProdName);
                 cmd.Parameters.AddWithValue("@val2", Qty);
                 cmd.Parameters.AddWithValue("@val3", Price);

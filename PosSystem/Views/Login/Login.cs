@@ -9,12 +9,12 @@ namespace PosSystem
 {
     public partial class LoginForm : Form
     {
-        Database dbCon = new Database();
+        Database db = new Database();
 
         public LoginForm()
         {
             InitializeComponent();
-            dbCon.Connect();
+            db.Connect();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -29,59 +29,50 @@ namespace PosSystem
             password = passwordTextBox.Text;
 
 
-            if (dbCon.IsConnected())
-            {
-                string query = $"SELECT * FROM users WHERE username=@val1;";
-                var cmd = new MySqlCommand(query, dbCon.Connection);
-                cmd.Parameters.AddWithValue("@val1", username);
-
-                var reader = cmd.ExecuteReader();
-                bool isLoggedIn = false;
-                while (reader.Read())
+                try
                 {
-                    _username = reader.GetString(3);
-                    _password = reader.GetString(4);
-                    _role = reader.GetString(6);
-                    if (_password == password)
+                    SqlCommand command = new SqlCommand("SELECT * FROM Users WHERE username=@val1", db.Connection);
+                    command.Parameters.AddWithValue("@val1", username);
+
+                    var reader = command.ExecuteReader();
+                    bool isLoggedIn = false;
+                    while (reader.Read())
                     {
-                        isLoggedIn = true;
+                        _username = reader.GetString(3);
+                        _password = reader.GetString(4);
+                        _role = reader.GetString(6);
+                        if (_password == password)
+                        {
+                            isLoggedIn = true;
+                        }
+                    }
+                    reader.Close();
+                    if (isLoggedIn)
+                    {
+                        if (_role == "ADMIN")
+                        {
+                            AdminHome homeAdmin = new AdminHome();
+                            homeAdmin.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            UserHome homeUser = new UserHome();
+                            homeUser.Show();
+                            this.Hide();
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Credentials", "Login");
                     }
                 }
-                reader.Close();
-                if (isLoggedIn)
+                catch
                 {
-                    if (_role == "ADMIN")
-                    {
-                        AdminHome homeAdmin = new AdminHome();
-                        homeAdmin.Show();
-                        this.Hide();
-                    } else
-                    {
-                        UserHome homeUser = new UserHome();
-                        homeUser.Show();
-                        this.Hide();
-                    }
-                    
-                } else
-                {
-                    MessageBox.Show("Invalid Credentials", "Login");
+                    Console.WriteLine("Something went wrong with the database connection.");
                 }
-            }
-
-
-            if (username == "Admin" && password == "admin123")
-            {
-                AdminHome objAhome = new AdminHome();
-                objAhome.Show();
-                this.Hide();
-            }
-            else if((username=="Isuru" && password == "Isuru123") || (username=="Isira" && password == "Isira123"))
-            {
-                
-                UserHome objUhome = new UserHome();
-                objUhome.Show();
-                this.Hide();
-            }
+            
 
         }
 
