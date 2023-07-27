@@ -76,10 +76,10 @@ namespace PosSystem
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read()) {
-                    EId = int.Parse(reader.GetString(0));
+                    EId = reader.GetInt32(0);
                     EProdName = reader.GetString(1);
-                    EQty = int.Parse(reader.GetString(2));
-                    EPrice = double.Parse(reader.GetString(3));
+                    EQty = reader.GetInt32(2);
+                    EPrice = reader.GetDouble(3);
                     EProdDescrip = reader.GetString(4);
                 }
 
@@ -87,7 +87,7 @@ namespace PosSystem
 
                 NProduct_Name.Text = EProdName;
                 NDescription.Text = EProdDescrip;
-                NQuanty.Value = EQty;
+                NQuanty.Value = Decimal.Parse(EQty.ToString());
                 NPrc.Text = EPrice.ToString();
             }
         }
@@ -104,6 +104,12 @@ namespace PosSystem
                 NPrc.Text = "0";
                 return;
             }
+        }
+
+        private void goBackToPreviousForm(object sender, EventArgs e)
+        {
+            AdminHome adminHome = new AdminHome();
+            adminHome.Show();
         }
     }
 }

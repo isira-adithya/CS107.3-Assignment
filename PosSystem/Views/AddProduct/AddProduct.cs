@@ -66,5 +66,10 @@ namespace PosSystem
             PriceTextBox.Text = "";
         }
 
+        private void goBackToPreviousForm(object sender, FormClosedEventArgs e)
+        {
+            AdminHome adminHome = new AdminHome();
+            adminHome.Show();
+        }
     }
 }

@@ -12,9 +12,11 @@ namespace PosSystem
 {
     public partial class AdminHome : Form
     {
+        public bool isLoggedInAsAdmin = false;
         public AdminHome()
         {
             InitializeComponent();
+            isLoggedInAsAdmin = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,11 +59,6 @@ namespace PosSystem
             NewUser user = new NewUser();
             user.Show();
             this.Hide();
-        }
-
-        private void HomeAdmin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
