@@ -1,11 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data;
-using System.Data.Common;
+﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -18,7 +11,7 @@ namespace PosSystem
 
         public Database()
         {
-            string connstring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"D:\\NSBM\\1st year\\C# Programming\\C-Sharp-Assignment\\posdb.mdf\";Integrated Security=True;Connect Timeout=30";
+            string connstring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\NSBM\\C-Sharp\\pos-db.mdf;Integrated Security=True;Connect Timeout=30";
             Connection = new SqlConnection(connstring);
         }
 
@@ -41,7 +34,7 @@ namespace PosSystem
                 Connection.Open();
             } catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong while connecting to the database. \n " + ex.ToString(), "MySQL Client");
+                MessageBox.Show("Something went wrong while connecting to the database. \n " + ex.Message, "MySQL Client");
                 return false;
             }
             return true;

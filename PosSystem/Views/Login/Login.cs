@@ -1,7 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Data;
-using System.Data.Common;
+﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -68,9 +65,9 @@ namespace PosSystem
                         MessageBox.Show("Invalid Credentials", "Login");
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    Console.WriteLine("Something went wrong with the database connection.");
+                    MessageBox.Show("Something went wrong:\n" + ex.Message);
                 }
             
 
