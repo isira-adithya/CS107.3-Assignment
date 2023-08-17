@@ -21,43 +21,45 @@ namespace PosSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ViewProduct product = new ViewProduct();
-            product.Show();
+            ViewProduct productsForm = new ViewProduct();
+            productsForm.SetRole("ADMIN");
+            productsForm.Show();
             this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddProduct Aproduct = new AddProduct();
-            Aproduct.Show();
+            AddProduct addProductForm = new AddProduct();
+            addProductForm.Show();
             this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            EditProduct Eproduct = new EditProduct();
-            Eproduct.Show();
+            EditProduct editProductForm = new EditProduct();
+            editProductForm.Show();
             this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DeleteProduct Dproduct = new DeleteProduct();
-            Dproduct.Show();
+            DeleteProduct deleteProductForm = new DeleteProduct();
+            deleteProductForm.Show();
             this.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PrintBill invoice = new PrintBill();
-            invoice.Show();
+            PrintBill printBillForm = new PrintBill();
+            printBillForm.SetRole("ADMIN");
+            printBillForm.Show();
             this.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            NewUser user = new NewUser();
-            user.Show();
+            NewUser newUserForm = new NewUser();
+            newUserForm.Show();
             this.Hide();
         }
     }

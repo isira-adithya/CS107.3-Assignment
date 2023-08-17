@@ -19,15 +19,17 @@ namespace PosSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ViewProduct product = new ViewProduct();
-            product.Show();
+            ViewProduct productsForm = new ViewProduct();
+            productsForm.SetRole("USER");
+            productsForm.Show();
             this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PrintBill invoice = new PrintBill();
-            invoice.Show();
+            PrintBill printBillForm = new PrintBill();
+            printBillForm.SetRole("ADMIN");
+            printBillForm.Show();
             this.Hide();
         }
     }

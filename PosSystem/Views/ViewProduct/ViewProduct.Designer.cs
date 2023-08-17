@@ -50,6 +50,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ViewProduct";
             this.Text = "ViewProduct";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.goBackToPreviousForm);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -12,9 +12,28 @@ namespace PosSystem
 {
     public partial class PrintBill : Form
     {
+        private string role;
         public PrintBill()
         {
             InitializeComponent();
+        }
+        public void SetRole(string _role)
+        {
+            this.role = _role;
+        }
+
+        private void goBackToPreviousForm(object sender, FormClosedEventArgs e)
+        {
+            if (this.role == "ADMIN")
+            {
+                AdminHome adminHome = new AdminHome();
+                adminHome.Show();
+            }
+            else
+            {
+                UserHome userHome = new UserHome();
+                userHome.Show();
+            }
         }
     }
 }
