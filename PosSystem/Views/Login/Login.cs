@@ -48,15 +48,15 @@ namespace PosSystem
                     {
                         if (_role == "ADMIN")
                         {
+                            this.Hide();
                             AdminHome homeAdmin = new AdminHome();
                             homeAdmin.Show();
-                            this.Hide();
                         }
                         else
                         {
+                            this.Hide();
                             UserHome homeUser = new UserHome();
                             homeUser.Show();
-                            this.Hide();
                         }
 
                     }

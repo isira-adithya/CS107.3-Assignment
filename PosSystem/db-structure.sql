@@ -15,7 +15,7 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE products (
 	id INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
 	name VARCHAR(1024) NOT NULL, 
-	quantity INT NOT NULL, 
+	stock INT NOT NULL, 
 	price FLOAT NOT NULL, 
 	description VARCHAR(4096) NOT NULL
 );
@@ -50,6 +50,7 @@ CREATE TABLE orderproducts (
 	id INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
 	product_id INT NOT NULL,
 	order_id INT NOT NULL,
+	quantity INT NOT NULL,
 	FOREIGN KEY (product_id) REFERENCES products(id),
 	FOREIGN KEY (order_id) REFERENCES orders(id)
 );

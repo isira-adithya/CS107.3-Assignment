@@ -41,7 +41,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Add new user here";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // NewUser
             // 
@@ -51,6 +50,7 @@
             this.Controls.Add(this.label1);
             this.Name = "NewUser";
             this.Text = "NewUser";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.goBackToPreviousForm);
             this.ResumeLayout(false);
             this.PerformLayout();
 

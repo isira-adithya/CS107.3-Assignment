@@ -31,13 +31,20 @@ namespace PosSystem
             ProdName = ProductNameTextBox.Text;
             ProdDescrip = DescriptionTextBox.Text;
             Qty = QuantityNumericUpDown.Value;
+
+            if ((ProdName == "") || (ProdDescrip == "") || (PriceTextBox.Text == ""))
+            {
+                MessageBox.Show("Please fill all the required fields.");
+                return;
+            }
+
             Price = double.Parse(PriceTextBox.Text);
             Database db = new Database();
             db.Connect();
 
             if (db.IsConnected())
             {
-                string query = $"INSERT INTO products(name, quantity, price, description) VALUES (@val1, @val2, @val3, @val4);";
+                string query = $"INSERT INTO products(name, stock, price, description) VALUES (@val1, @val2, @val3, @val4);";
                 SqlCommand cmd = new SqlCommand(query, db.Connection);
                 cmd.Parameters.AddWithValue("@val1", ProdName);
                 cmd.Parameters.AddWithValue("@val2", Qty);

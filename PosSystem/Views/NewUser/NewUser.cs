@@ -17,9 +17,10 @@ namespace PosSystem
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void goBackToPreviousForm(object sender, FormClosedEventArgs e)
         {
-
+            AdminHome adminHome = new AdminHome();
+            adminHome.Show();
         }
     }
 }

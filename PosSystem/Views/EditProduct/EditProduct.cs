@@ -36,7 +36,7 @@ namespace PosSystem
             NQty = int.Parse(NQuanty.Value.ToString());
             NPrice = double.Parse(NPrc.Text);
 
-            string query = $"UPDATE products SET name=@val1, quantity=@val2, price=@val3, description=@val4 WHERE id=@val5";
+            string query = $"UPDATE products SET name=@val1, stock=@val2, price=@val3, description=@val4 WHERE id=@val5";
             SqlCommand cmd = new SqlCommand(query, db.Connection);
             cmd.Parameters.AddWithValue("@val1", NProdName);
             cmd.Parameters.AddWithValue("@val2", NQty.ToString());
@@ -83,12 +83,15 @@ namespace PosSystem
                     EProdDescrip = reader.GetString(4);
                 }
 
-                reader.Close();
+                if (reader.HasRows)
+                {
+                    NProduct_Name.Text = EProdName;
+                    NDescription.Text = EProdDescrip;
+                    NQuanty.Value = Decimal.Parse(EQty.ToString());
+                    NPrc.Text = EPrice.ToString();
+                }
 
-                NProduct_Name.Text = EProdName;
-                NDescription.Text = EProdDescrip;
-                NQuanty.Value = Decimal.Parse(EQty.ToString());
-                NPrc.Text = EPrice.ToString();
+                reader.Close();
             }
         }
 
