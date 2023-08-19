@@ -108,7 +108,7 @@
             this.addUserBtn.UseVisualStyleBackColor = true;
             this.addUserBtn.Click += new System.EventHandler(this.button7_Click);
             // 
-            // HomeAdmin
+            // AdminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -120,8 +120,9 @@
             this.Controls.Add(this.addProductBtn);
             this.Controls.Add(this.viewProductBtn);
             this.Controls.Add(this.label1);
-            this.Name = "HomeAdmin";
+            this.Name = "AdminHome";
             this.Text = "HomeAdmin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminHome_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

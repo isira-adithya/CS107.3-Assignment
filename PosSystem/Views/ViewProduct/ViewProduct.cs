@@ -37,5 +37,12 @@ namespace PosSystem
                 userHome.Show();
             }
         }
+
+        private void ViewProduct_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_pos_dbDataSet.products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this._pos_dbDataSet.products);
+
+        }
     }
 }

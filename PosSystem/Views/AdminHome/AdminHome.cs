@@ -62,5 +62,10 @@ namespace PosSystem
             newUserForm.Show();
             this.Hide();
         }
+
+        private void AdminHome_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

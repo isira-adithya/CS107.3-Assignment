@@ -28,43 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ProductNameLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PriceTextBox = new System.Windows.Forms.TextBox();
             this.QuantityLabel = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
-            this.DescriptionLabel = new System.Windows.Forms.Label();
-            this.ProductNameTextBox = new System.Windows.Forms.TextBox();
-            this.PriceTextBox = new System.Windows.Forms.TextBox();
-            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
             this.QuantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.DescriptionLabel = new System.Windows.Forms.Label();
             this.AddBtn = new System.Windows.Forms.Button();
+            this.ProductNameTextBox = new System.Windows.Forms.TextBox();
             this.CancelBtn = new System.Windows.Forms.Button();
+            this.ProductNameLabel = new System.Windows.Forms.Label();
             this.FormGroupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.QuantityNumericUpDown)).BeginInit();
             this.FormGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ProductNameLabel
+            // label1
             // 
-            this.ProductNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.ProductNameLabel.AutoSize = true;
-            this.ProductNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductNameLabel.Location = new System.Drawing.Point(380, 192);
-            this.ProductNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.ProductNameLabel.Name = "ProductNameLabel";
-            this.ProductNameLabel.Size = new System.Drawing.Size(141, 25);
-            this.ProductNameLabel.TabIndex = 0;
-            this.ProductNameLabel.Text = "Product Name ";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 31);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Add Product";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PriceTextBox
+            // 
+            this.PriceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.PriceTextBox.Location = new System.Drawing.Point(247, 143);
+            this.PriceTextBox.Name = "PriceTextBox";
+            this.PriceTextBox.Size = new System.Drawing.Size(157, 20);
+            this.PriceTextBox.TabIndex = 6;
             // 
             // QuantityLabel
             // 
             this.QuantityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.QuantityLabel.AutoSize = true;
             this.QuantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuantityLabel.Location = new System.Drawing.Point(419, 463);
-            this.QuantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.QuantityLabel.Location = new System.Drawing.Point(6, 188);
             this.QuantityLabel.Name = "QuantityLabel";
-            this.QuantityLabel.Size = new System.Drawing.Size(85, 25);
+            this.QuantityLabel.Size = new System.Drawing.Size(68, 20);
             this.QuantityLabel.TabIndex = 1;
             this.QuantityLabel.Text = "Quantity";
             // 
@@ -73,66 +80,23 @@
             this.PriceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.PriceLabel.AutoSize = true;
             this.PriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceLabel.Location = new System.Drawing.Point(436, 388);
-            this.PriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PriceLabel.Location = new System.Drawing.Point(6, 143);
             this.PriceLabel.Name = "PriceLabel";
-            this.PriceLabel.Size = new System.Drawing.Size(56, 25);
+            this.PriceLabel.Size = new System.Drawing.Size(44, 20);
             this.PriceLabel.TabIndex = 2;
             this.PriceLabel.Text = "Price";
-            // 
-            // DescriptionLabel
-            // 
-            this.DescriptionLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.DescriptionLabel.AutoSize = true;
-            this.DescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescriptionLabel.Location = new System.Drawing.Point(404, 270);
-            this.DescriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(109, 25);
-            this.DescriptionLabel.TabIndex = 3;
-            this.DescriptionLabel.Text = "Description";
-            // 
-            // ProductNameTextBox
-            // 
-            this.ProductNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.ProductNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.ProductNameTextBox.Location = new System.Drawing.Point(547, 192);
-            this.ProductNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ProductNameTextBox.Name = "ProductNameTextBox";
-            this.ProductNameTextBox.Size = new System.Drawing.Size(208, 22);
-            this.ProductNameTextBox.TabIndex = 4;
-            // 
-            // PriceTextBox
-            // 
-            this.PriceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.PriceTextBox.Location = new System.Drawing.Point(547, 388);
-            this.PriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.PriceTextBox.Name = "PriceTextBox";
-            this.PriceTextBox.Size = new System.Drawing.Size(208, 22);
-            this.PriceTextBox.TabIndex = 6;
-            // 
-            // DescriptionTextBox
-            // 
-            this.DescriptionTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.DescriptionTextBox.Location = new System.Drawing.Point(547, 272);
-            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.DescriptionTextBox.Multiline = true;
-            this.DescriptionTextBox.Name = "DescriptionTextBox";
-            this.DescriptionTextBox.Size = new System.Drawing.Size(208, 53);
-            this.DescriptionTextBox.TabIndex = 7;
             // 
             // QuantityNumericUpDown
             // 
             this.QuantityNumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.QuantityNumericUpDown.Location = new System.Drawing.Point(547, 463);
-            this.QuantityNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.QuantityNumericUpDown.Location = new System.Drawing.Point(247, 191);
             this.QuantityNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.QuantityNumericUpDown.Name = "QuantityNumericUpDown";
-            this.QuantityNumericUpDown.Size = new System.Drawing.Size(61, 22);
+            this.QuantityNumericUpDown.Size = new System.Drawing.Size(46, 20);
             this.QuantityNumericUpDown.TabIndex = 8;
             this.QuantityNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -140,44 +104,69 @@
             0,
             0});
             // 
-            // label1
+            // DescriptionTextBox
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(667, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 39);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Add Product";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.DescriptionTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DescriptionTextBox.Location = new System.Drawing.Point(247, 73);
+            this.DescriptionTextBox.Multiline = true;
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.Size = new System.Drawing.Size(157, 44);
+            this.DescriptionTextBox.TabIndex = 7;
+            // 
+            // DescriptionLabel
+            // 
+            this.DescriptionLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DescriptionLabel.AutoSize = true;
+            this.DescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionLabel.Location = new System.Drawing.Point(6, 73);
+            this.DescriptionLabel.Name = "DescriptionLabel";
+            this.DescriptionLabel.Size = new System.Drawing.Size(89, 20);
+            this.DescriptionLabel.TabIndex = 3;
+            this.DescriptionLabel.Text = "Description";
             // 
             // AddBtn
             // 
             this.AddBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.AddBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddBtn.Location = new System.Drawing.Point(396, 582);
-            this.AddBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddBtn.Location = new System.Drawing.Point(216, 265);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(115, 38);
+            this.AddBtn.Size = new System.Drawing.Size(86, 31);
             this.AddBtn.TabIndex = 10;
             this.AddBtn.Text = "ADD";
             this.AddBtn.UseVisualStyleBackColor = true;
             this.AddBtn.Click += new System.EventHandler(this.product_add_Click);
             // 
+            // ProductNameTextBox
+            // 
+            this.ProductNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.ProductNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.ProductNameTextBox.Location = new System.Drawing.Point(247, 29);
+            this.ProductNameTextBox.Name = "ProductNameTextBox";
+            this.ProductNameTextBox.Size = new System.Drawing.Size(157, 20);
+            this.ProductNameTextBox.TabIndex = 4;
+            // 
             // CancelBtn
             // 
             this.CancelBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.CancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelBtn.Location = new System.Drawing.Point(628, 582);
-            this.CancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CancelBtn.Location = new System.Drawing.Point(318, 265);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(115, 38);
+            this.CancelBtn.Size = new System.Drawing.Size(86, 31);
             this.CancelBtn.TabIndex = 11;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = true;
             this.CancelBtn.Click += new System.EventHandler(this.AddProCancel_Click);
+            // 
+            // ProductNameLabel
+            // 
+            this.ProductNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.ProductNameLabel.AutoSize = true;
+            this.ProductNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductNameLabel.Location = new System.Drawing.Point(6, 27);
+            this.ProductNameLabel.Name = "ProductNameLabel";
+            this.ProductNameLabel.Size = new System.Drawing.Size(114, 20);
+            this.ProductNameLabel.TabIndex = 0;
+            this.ProductNameLabel.Text = "Product Name ";
             // 
             // FormGroupBox
             // 
@@ -193,23 +182,20 @@
             this.FormGroupBox.Controls.Add(this.PriceLabel);
             this.FormGroupBox.Controls.Add(this.QuantityLabel);
             this.FormGroupBox.Controls.Add(this.PriceTextBox);
-            this.FormGroupBox.Location = new System.Drawing.Point(216, 53);
-            this.FormGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormGroupBox.Location = new System.Drawing.Point(25, 43);
             this.FormGroupBox.Name = "FormGroupBox";
-            this.FormGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FormGroupBox.Size = new System.Drawing.Size(1137, 666);
+            this.FormGroupBox.Size = new System.Drawing.Size(410, 313);
             this.FormGroupBox.TabIndex = 12;
             this.FormGroupBox.TabStop = false;
             // 
             // AddProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1592, 734);
+            this.ClientSize = new System.Drawing.Size(460, 374);
             this.Controls.Add(this.FormGroupBox);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddProduct";
             this.Text = "Add Product";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.goBackToPreviousForm);
@@ -222,18 +208,17 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label ProductNameLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox PriceTextBox;
         private System.Windows.Forms.Label QuantityLabel;
         private System.Windows.Forms.Label PriceLabel;
-        private System.Windows.Forms.Label DescriptionLabel;
-        private System.Windows.Forms.TextBox ProductNameTextBox;
-        private System.Windows.Forms.TextBox PriceTextBox;
-        private System.Windows.Forms.TextBox DescriptionTextBox;
         private System.Windows.Forms.NumericUpDown QuantityNumericUpDown;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox DescriptionTextBox;
+        private System.Windows.Forms.Label DescriptionLabel;
         private System.Windows.Forms.Button AddBtn;
+        private System.Windows.Forms.TextBox ProductNameTextBox;
         private System.Windows.Forms.Button CancelBtn;
+        private System.Windows.Forms.Label ProductNameLabel;
         private System.Windows.Forms.GroupBox FormGroupBox;
     }
 }

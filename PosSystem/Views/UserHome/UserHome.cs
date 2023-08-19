@@ -32,5 +32,10 @@ namespace PosSystem
             printBillForm.Show();
             this.Hide();
         }
+
+        private void UserHome_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

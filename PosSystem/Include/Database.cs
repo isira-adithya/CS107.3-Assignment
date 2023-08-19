@@ -11,7 +11,7 @@ namespace PosSystem
 
         public Database()
         {
-            string connstring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\NSBM\\C-Sharp\\pos-db.mdf;Integrated Security=True;Connect Timeout=30";
+            string connstring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\pos-db.mdf;Integrated Security=True;Connect Timeout=30";
             Connection = new SqlConnection(connstring);
         }
 
