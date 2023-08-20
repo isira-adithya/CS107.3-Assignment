@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PosSystem.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,13 +12,21 @@ using System.Windows.Forms;
 
 namespace PosSystem
 {
-    public partial class NewUser : Form
+    public partial class AddAccount : Form
     {
-        Database db = new Database();
-        public NewUser()
+        Account account = new Account();
+        public AddAccount()
         {
             InitializeComponent();
-            db.Connect();
+        }
+
+        private void clearForm()
+        {
+            usernameInputBox.Text = string.Empty;
+            passwordInputBox.Text = string.Empty;
+            rpasswordInputBox.Text = string.Empty;
+            adminRoleRadioBtn.Checked = false;
+            userRoleRadioBtn.Checked = false;
         }
 
         private void goBackToPreviousForm(object sender, FormClosedEventArgs e)
@@ -44,11 +53,7 @@ namespace PosSystem
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            usernameInputBox.Text = string.Empty;
-            passwordInputBox.Text = string.Empty;
-            rpasswordInputBox.Text = string.Empty;
-            adminRoleRadioBtn.Checked = false;
-            userRoleRadioBtn.Checked = false;
+            clearForm();
         }
 
         private void createBtn_Click(object sender, EventArgs e)
@@ -60,6 +65,18 @@ namespace PosSystem
             string first_name = firstnameInputBox.Text;
             string last_name = lastnameInputBox.Text;
             string role = "";
+
+            if ((username == "") || (password == "") || (repeatPassword == "") || (email == "") || (first_name == "") || (last_name == ""))
+            {
+                MessageBox.Show("Please fill in the all required values", "POS");
+                return;
+            }
+
+            if (!account.isUsernameValid(username))
+            {
+                MessageBox.Show("There is an exisiting account with the same username", "POS");
+                return;
+            }
 
             if (adminRoleRadioBtn.Checked || userRoleRadioBtn.Checked )
             {
@@ -83,22 +100,12 @@ namespace PosSystem
             }
 
 
-            string query = $"INSERT INTO users(first_name, last_name, username, password, email, role) VALUES (@val1, @val2, @val3, @val4, @val5, @val6);";
-            SqlCommand cmd = new SqlCommand(query, db.Connection);
-            cmd.Parameters.AddWithValue("@val1", first_name);
-            cmd.Parameters.AddWithValue("@val2", last_name);
-            cmd.Parameters.AddWithValue("@val3", username);
-            cmd.Parameters.AddWithValue("@val4", password);
-            cmd.Parameters.AddWithValue("@val5", email);
-            cmd.Parameters.AddWithValue("@val6", role);
-            int result = cmd.ExecuteNonQuery();
-
-            if (result == 1)
+            bool accountCreationResult = account.createNewAccount(first_name, last_name, username, password, email, role);
+            if (accountCreationResult)
             {
-                MessageBox.Show($"New {role} account has been added.", "POS");
-                this.cancelBtn_Click(sender, e);
-            }
-            else
+                MessageBox.Show("Successfully created the new account.", "POS");
+                clearForm();
+            } else
             {
                 MessageBox.Show("Something went wrong.", "POS");
             }

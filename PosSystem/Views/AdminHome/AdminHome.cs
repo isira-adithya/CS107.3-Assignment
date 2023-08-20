@@ -43,8 +43,10 @@ namespace PosSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DeleteProduct deleteProductForm = new DeleteProduct();
-            deleteProductForm.Show();
+            // DeleteProduct deleteProductForm = new DeleteProduct();
+            // deleteProductForm.Show();
+            ManageAccount manageAccountForm = new ManageAccount();
+            manageAccountForm.Show();
             this.Hide();
         }
 
@@ -58,7 +60,7 @@ namespace PosSystem
 
         private void button7_Click(object sender, EventArgs e)
         {
-            NewUser newUserForm = new NewUser();
+            AddAccount newUserForm = new AddAccount();
             newUserForm.Show();
             this.Hide();
         }

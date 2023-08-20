@@ -1,6 +1,6 @@
 ﻿namespace PosSystem
 {
-    partial class NewUser
+    partial class AddAccount
     {
         /// <summary>
         /// Required designer variable.

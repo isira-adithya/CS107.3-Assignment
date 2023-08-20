@@ -35,6 +35,7 @@
             this.deleteProductBtn = new System.Windows.Forms.Button();
             this.printBillBtn = new System.Windows.Forms.Button();
             this.addUserBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -50,17 +51,17 @@
             // 
             // viewProductBtn
             // 
-            this.viewProductBtn.Location = new System.Drawing.Point(31, 275);
+            this.viewProductBtn.Location = new System.Drawing.Point(118, 275);
             this.viewProductBtn.Name = "viewProductBtn";
-            this.viewProductBtn.Size = new System.Drawing.Size(75, 34);
+            this.viewProductBtn.Size = new System.Drawing.Size(90, 34);
             this.viewProductBtn.TabIndex = 1;
-            this.viewProductBtn.Text = "View Product";
+            this.viewProductBtn.Text = "View Products";
             this.viewProductBtn.UseVisualStyleBackColor = true;
             this.viewProductBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // addProductBtn
             // 
-            this.addProductBtn.Location = new System.Drawing.Point(167, 275);
+            this.addProductBtn.Location = new System.Drawing.Point(12, 275);
             this.addProductBtn.Name = "addProductBtn";
             this.addProductBtn.Size = new System.Drawing.Size(75, 34);
             this.addProductBtn.TabIndex = 2;
@@ -70,7 +71,7 @@
             // 
             // editProductBtn
             // 
-            this.editProductBtn.Location = new System.Drawing.Point(295, 275);
+            this.editProductBtn.Location = new System.Drawing.Point(242, 275);
             this.editProductBtn.Name = "editProductBtn";
             this.editProductBtn.Size = new System.Drawing.Size(75, 34);
             this.editProductBtn.TabIndex = 3;
@@ -80,17 +81,17 @@
             // 
             // deleteProductBtn
             // 
-            this.deleteProductBtn.Location = new System.Drawing.Point(432, 275);
+            this.deleteProductBtn.Location = new System.Drawing.Point(575, 275);
             this.deleteProductBtn.Name = "deleteProductBtn";
-            this.deleteProductBtn.Size = new System.Drawing.Size(75, 34);
+            this.deleteProductBtn.Size = new System.Drawing.Size(109, 34);
             this.deleteProductBtn.TabIndex = 4;
-            this.deleteProductBtn.Text = "Delete Product";
+            this.deleteProductBtn.Text = "Manage Accounts";
             this.deleteProductBtn.UseVisualStyleBackColor = true;
             this.deleteProductBtn.Click += new System.EventHandler(this.button4_Click);
             // 
             // printBillBtn
             // 
-            this.printBillBtn.Location = new System.Drawing.Point(563, 275);
+            this.printBillBtn.Location = new System.Drawing.Point(713, 275);
             this.printBillBtn.Name = "printBillBtn";
             this.printBillBtn.Size = new System.Drawing.Size(75, 34);
             this.printBillBtn.TabIndex = 5;
@@ -100,19 +101,29 @@
             // 
             // addUserBtn
             // 
-            this.addUserBtn.Location = new System.Drawing.Point(684, 275);
+            this.addUserBtn.Location = new System.Drawing.Point(345, 275);
             this.addUserBtn.Name = "addUserBtn";
-            this.addUserBtn.Size = new System.Drawing.Size(75, 34);
+            this.addUserBtn.Size = new System.Drawing.Size(83, 34);
             this.addUserBtn.TabIndex = 7;
-            this.addUserBtn.Text = "Add User";
+            this.addUserBtn.Text = "Add Account";
             this.addUserBtn.UseVisualStyleBackColor = true;
             this.addUserBtn.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(458, 275);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 34);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "View Accounts";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // AdminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 348);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.addUserBtn);
             this.Controls.Add(this.printBillBtn);
             this.Controls.Add(this.deleteProductBtn);
@@ -137,5 +148,6 @@
         private System.Windows.Forms.Button deleteProductBtn;
         private System.Windows.Forms.Button printBillBtn;
         private System.Windows.Forms.Button addUserBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

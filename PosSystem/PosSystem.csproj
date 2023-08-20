@@ -123,6 +123,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Account.cs" />
+    <Compile Include="Views\ManageAccount\ManageAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ManageAccount\ManageAccount.Designer.cs">
+      <DependentUpon>ManageAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddProduct\AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,12 +137,6 @@
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Include\Database.cs" />
-    <Compile Include="Views\DeleteProduct\DeleteProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\DeleteProduct\DeleteProduct.Designer.cs">
-      <DependentUpon>DeleteProduct.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\EditProduct\EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,11 +161,11 @@
     <Compile Include="Views\Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewUser\NewUser.cs">
+    <Compile Include="Views\AddAccount\AddAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\NewUser\NewUser.Designer.cs">
-      <DependentUpon>NewUser.cs</DependentUpon>
+    <Compile Include="Views\AddAccount\AddAccount.Designer.cs">
+      <DependentUpon>AddAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\PrintBill\PrintBill.cs">
       <SubType>Form</SubType>
@@ -185,11 +186,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_pos_dbDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\ManageAccount\ManageAccount.resx">
+      <DependentUpon>ManageAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AddProduct\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\DeleteProduct\DeleteProduct.resx">
-      <DependentUpon>DeleteProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EditProduct\EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
@@ -203,8 +204,8 @@
     <EmbeddedResource Include="Views\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\NewUser\NewUser.resx">
-      <DependentUpon>NewUser.cs</DependentUpon>
+    <EmbeddedResource Include="Views\AddAccount\AddAccount.resx">
+      <DependentUpon>AddAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PrintBill\PrintBill.resx">
       <DependentUpon>PrintBill.cs</DependentUpon>

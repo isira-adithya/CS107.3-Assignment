@@ -27,6 +27,37 @@ namespace PosSystem
             db.Connect();
         }
 
+        private void clearForm()
+        {
+            NProduct_Name.Text = "";
+            NDescription.Text = "";
+            NQuanty.Value = 1;
+            NPrc.Text = "0";
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult uResponse = MessageBox.Show("Are you sure?", "POS System", MessageBoxButtons.YesNo);
+            if (uResponse == System.Windows.Forms.DialogResult.Yes)
+            {
+                string query = "DELETE FROM products WHERE id=@val1";
+
+                SqlCommand cmd = new SqlCommand(query, db.Connection);
+                cmd.Parameters.AddWithValue("@val1", EId);
+                int result = cmd.ExecuteNonQuery();
+
+                if (result == 1)
+                {
+                    MessageBox.Show("Product has been deleted.", "POS");
+                    this.clearForm();
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong.", "POS");
+                }
+            }
+        }
+
         private void UpdateDetailsButton_Click(object sender, EventArgs e)
         {
 
@@ -58,11 +89,8 @@ namespace PosSystem
         }
 
         private void AddProCancel_Click(object sender, EventArgs e)
-        { 
-             NProduct_Name.Text="";
-             NDescription.Text="";
-             NQuanty.Value=1;
-             NPrc.Text="0";
+        {
+            this.clearForm();
         }
 
         private void SearchButton_Click(object sender, EventArgs e)

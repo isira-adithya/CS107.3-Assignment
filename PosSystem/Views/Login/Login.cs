@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PosSystem.Classes;
+using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -18,59 +19,29 @@ namespace PosSystem
         {
             string username;
             string password;
-            string _username = "";
-            string _password = "";
-            string _role = "";
 
             username = usernameTextBox.Text;
             password = passwordTextBox.Text;
 
-
-                try
+            Account accountObj = new Account();
+            bool loginResult = accountObj.checkCredentials(username, password);
+            if (loginResult)
+            {
+                if (accountObj.getRole() == "ADMIN")
                 {
-                    SqlCommand command = new SqlCommand("SELECT * FROM Users WHERE username=@val1", db.Connection);
-                    command.Parameters.AddWithValue("@val1", username);
-
-                    var reader = command.ExecuteReader();
-                    bool isLoggedIn = false;
-                    while (reader.Read())
-                    {
-                        _username = reader.GetString(3);
-                        _password = reader.GetString(4);
-                        _role = reader.GetString(6);
-                        if (_password == password)
-                        {
-                            isLoggedIn = true;
-                        }
-                    }
-                    reader.Close();
-                    if (isLoggedIn)
-                    {
-                        if (_role == "ADMIN")
-                        {
-                            this.Hide();
-                            AdminHome homeAdmin = new AdminHome();
-                            homeAdmin.Show();
-                        }
-                        else
-                        {
-                            this.Hide();
-                            UserHome homeUser = new UserHome();
-                            homeUser.Show();
-                        }
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid Credentials", "Login");
-                    }
-                }
-                catch (Exception ex)
+                    this.Hide();
+                    AdminHome adminHomeObj = new AdminHome();
+                    adminHomeObj.Show();
+                } else
                 {
-                    MessageBox.Show("Something went wrong:\n" + ex.Message);
+                    this.Hide();
+                    UserHome userHomeObj = new UserHome();
+                    userHomeObj.Show();
                 }
-            
-
+            } else
+            {
+                MessageBox.Show("Invalid Credentials!");
+            }
         }
 
         private void clearButton_Click(object sender, EventArgs e)

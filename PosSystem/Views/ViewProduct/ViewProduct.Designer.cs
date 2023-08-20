@@ -31,17 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this._pos_dbDataSet = new PosSystem._pos_dbDataSet();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._pos_dbDataSet = new PosSystem._pos_dbDataSet();
             this.productsTableAdapter = new PosSystem._pos_dbDataSetTableAdapters.productsTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._pos_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._pos_dbDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,23 +62,22 @@
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.stockDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn});
+            this.priceDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(33, 73);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(444, 150);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // _pos_dbDataSet
-            // 
-            this._pos_dbDataSet.DataSetName = "_pos_dbDataSet";
-            this._pos_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // productsBindingSource
             // 
             this.productsBindingSource.DataMember = "products";
             this.productsBindingSource.DataSource = this._pos_dbDataSet;
+            // 
+            // _pos_dbDataSet
+            // 
+            this._pos_dbDataSet.DataSetName = "_pos_dbDataSet";
+            this._pos_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // productsTableAdapter
             // 
@@ -110,17 +108,11 @@
             this.priceDataGridViewTextBoxColumn.HeaderText = "price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
             // ViewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 441);
+            this.ClientSize = new System.Drawing.Size(515, 264);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "ViewProduct";
@@ -128,8 +120,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.goBackToPreviousForm);
             this.Load += new System.EventHandler(this.ViewProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._pos_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._pos_dbDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,6 +138,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
     }
 }
