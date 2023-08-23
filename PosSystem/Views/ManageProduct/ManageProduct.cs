@@ -17,10 +17,10 @@ namespace PosSystem
     public partial class ManageProduct : Form
     {
         private Product product = new Product();
-        string NProdName;
-        string NProdDescrip;
-        int NQty;
-        double NPrice;
+        string product_name;
+        string product_description;
+        int product_quantity;
+        double product_price;
 
         public ManageProduct()
         {
@@ -58,12 +58,12 @@ namespace PosSystem
         {
 
             // below are the new product details(N)for New Details
-            NProdName = productName.Text;
-            NProdDescrip = productDescription.Text;
-            NQty = int.Parse(productQuantity.Value.ToString());
-            NPrice = double.Parse(productPrice.Text);
+            product_name = productName.Text;
+            product_description = productDescription.Text;
+            product_quantity = int.Parse(productQuantity.Value.ToString());
+            product_price = double.Parse(productPrice.Text);
 
-            product.setNewDetails(NProdName, NProdDescrip, NQty, NPrice);
+            product.setNewDetails(product_name, product_description, product_quantity, product_price);
             bool result = product.updateDetails();
 
             if (result)
