@@ -125,7 +125,7 @@ namespace PosSystem.Classes
             cmd.Parameters.AddWithValue("@val1", name);
             cmd.Parameters.AddWithValue("@val2", description);
             cmd.Parameters.AddWithValue("@val3", stock);
-            cmd.Parameters.AddWithValue("@val4s", price);
+            cmd.Parameters.AddWithValue("@val4", price);
             cmd.Parameters.AddWithValue("@id", id);
             int result = cmd.ExecuteNonQuery();
 

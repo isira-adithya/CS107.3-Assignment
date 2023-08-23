@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using PosSystem.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,16 +16,15 @@ namespace PosSystem
 {
     public partial class ManageProduct : Form
     {
-        private Database db = new Database();
-        string EProdName, NProdName;
-        string EProdDescrip, NProdDescrip;
-        int EQty, EId, NQty;
-        double EPrice, NPrice;
+        private Product product = new Product();
+        string NProdName;
+        string NProdDescrip;
+        int NQty;
+        double NPrice;
 
         public ManageProduct()
         {
             InitializeComponent();
-            db.Connect();
         }
 
         private void clearForm()
@@ -40,13 +40,9 @@ namespace PosSystem
             DialogResult uResponse = MessageBox.Show("Are you sure?", "POS System", MessageBoxButtons.YesNo);
             if (uResponse == System.Windows.Forms.DialogResult.Yes)
             {
-                string query = "DELETE FROM products WHERE id=@val1";
+                bool result = product.deleteProduct();
 
-                SqlCommand cmd = new SqlCommand(query, db.Connection);
-                cmd.Parameters.AddWithValue("@val1", EId);
-                int result = cmd.ExecuteNonQuery();
-
-                if (result == 1)
+                if (result)
                 {
                     MessageBox.Show("Product has been deleted.", "POS");
                     this.clearForm();
@@ -67,16 +63,10 @@ namespace PosSystem
             NQty = int.Parse(productQuantity.Value.ToString());
             NPrice = double.Parse(productPrice.Text);
 
-            string query = $"UPDATE products SET name=@val1, stock=@val2, price=@val3, description=@val4 WHERE id=@val5";
-            SqlCommand cmd = new SqlCommand(query, db.Connection);
-            cmd.Parameters.AddWithValue("@val1", NProdName);
-            cmd.Parameters.AddWithValue("@val2", NQty.ToString());
-            cmd.Parameters.AddWithValue("@val3", NPrice.ToString());
-            cmd.Parameters.AddWithValue("@val4", NProdDescrip);
-            cmd.Parameters.AddWithValue("@val5", EId.ToString());
-            int result = cmd.ExecuteNonQuery();
+            product.setNewDetails(NProdName, NProdDescrip, NQty, NPrice);
+            bool result = product.updateDetails();
 
-            if (result == 1)
+            if (result)
             {
                 MessageBox.Show("Product has been updated.", "POS");
                 AddProCancel_Click(sender, e);
@@ -95,31 +85,15 @@ namespace PosSystem
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            if (db.IsConnected())
+            string query = searchQueryTextBox.Text;
+            bool result = product.findProduct(query);
+
+            if (result)
             {
-                string query = searchQueryTextBox.Text;
-                SqlCommand cmd = new SqlCommand("SELECT * FROM products WHERE name LIKE @val1", db.Connection);
-                cmd.Parameters.AddWithValue("@val1", "%" + query + "%");
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read()) {
-                    EId = reader.GetInt32(0);
-                    EProdName = reader.GetString(1);
-                    EQty = reader.GetInt32(2);
-                    EPrice = reader.GetDouble(3);
-                    EProdDescrip = reader.GetString(4);
-                }
-
-                if (reader.HasRows)
-                {
-                    productName.Text = EProdName;
-                    productDescription.Text = EProdDescrip;
-                    productQuantity.Value = Decimal.Parse(EQty.ToString());
-                    productPrice.Text = EPrice.ToString();
-                }
-
-                reader.Close();
+                productName.Text = product.getName();
+                productDescription.Text = product.getDescription();
+                productQuantity.Value = Decimal.Parse(product.getStock().ToString());
+                productPrice.Text = product.getPrice().ToString();
             }
         }
 
