@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PosSystem
 {
@@ -33,14 +34,38 @@ namespace PosSystem
             InitializeComponent();
             product = new Product();
 
+            // Preparing the DataGridView
             billDataGridView.Columns.Add("Name", "Name");
             billDataGridView.Columns.Add("Quantity", "Quantity");
             billDataGridView.Columns.Add("Price (per each)", "Price (per each)");
             billDataGridView.Columns.Add("Total Price", "Total Price");
+
+            // Adding Payment Methods
+            List<PaymentMethod> paymentMethods = new List<PaymentMethod>();
+            paymentMethods.Add(new PaymentMethod() { Text = "PayPal", Value = "paypal" });
+            paymentMethods.Add(new PaymentMethod() { Text = "Credit/Debit Card", Value = "card" });
+            paymentMethods.Add(new PaymentMethod() { Text = "Cash", Value = "cash" });
+
+            paymentMethodSelectionComboBox.DataSource = paymentMethods;
+            paymentMethodSelectionComboBox.DisplayMember = "Text";
+            paymentMethodSelectionComboBox.ValueMember = "Value";
+
+            // Clearing Labels
+            clearLabels();
         }
         public void SetRole(string _role)
         {
             this.role = _role;
+        }
+
+        private void clearLabels()
+        {
+            // Removing the 'Test' from labels
+            firstnameLabel.Text = "";
+            lastnameLabel.Text = "";
+            emailLabel.Text = "";
+            phoneLabel.Text = "";
+            addressLabel.Text = "";
         }
 
         private void goBackToPreviousForm(object sender, FormClosedEventArgs e)
@@ -68,6 +93,12 @@ namespace PosSystem
                 customer_address = addressInputBox.Text;
                 customerDetailsGroupBox.Enabled = false;
                 addProductsGroupBox.Enabled = true;
+
+                firstnameLabel.Text = customer_first_name;
+                lastnameLabel.Text = customer_last_name;
+                emailLabel.Text = customer_email;
+                phoneLabel.Text = customer_phone;
+                addressLabel.Text = customer_address;
             } else
             {
                 MessageBox.Show("Customer's First name and Last name is required");
@@ -142,5 +173,14 @@ namespace PosSystem
 
             totalPriceLabel.Text = totalPrice.ToString() + " LKR";
         }
+
+    }
+
+    public class PaymentMethod
+    {
+        public PaymentMethod() { }
+
+        public string Value { set; get; }
+        public string Text { set; get; }
     }
 }

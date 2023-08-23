@@ -50,25 +50,26 @@
             this.customerDetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.saveCustomerBtn = new System.Windows.Forms.Button();
             this.addProductsGroupBox = new System.Windows.Forms.GroupBox();
+            this.searchResultsLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.billDataGridView = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.totalPriceLabel = new System.Windows.Forms.Label();
             this.printBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.billGroupBox = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.searchResultsLabel = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.paymentMethodSelection = new System.Windows.Forms.ComboBox();
+            this.addressLabel = new System.Windows.Forms.Label();
+            this.phoneLabel = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.lastnameLabel = new System.Windows.Forms.Label();
+            this.firstnameLabel = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.paymentMethodSelectionComboBox = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
             this.customerDetailsGroupBox.SuspendLayout();
             this.addProductsGroupBox.SuspendLayout();
@@ -296,6 +297,26 @@
             this.addProductsGroupBox.TabStop = false;
             this.addProductsGroupBox.Text = "Add Products";
             // 
+            // searchResultsLabel
+            // 
+            this.searchResultsLabel.AutoSize = true;
+            this.searchResultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchResultsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.searchResultsLabel.Location = new System.Drawing.Point(27, 181);
+            this.searchResultsLabel.Name = "searchResultsLabel";
+            this.searchResultsLabel.Size = new System.Drawing.Size(78, 16);
+            this.searchResultsLabel.TabIndex = 23;
+            this.searchResultsLabel.Text = "Not Found";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 151);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 16);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Results:";
+            // 
             // billDataGridView
             // 
             this.billDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -345,12 +366,13 @@
             // 
             // billGroupBox
             // 
-            this.billGroupBox.Controls.Add(this.label22);
-            this.billGroupBox.Controls.Add(this.label21);
-            this.billGroupBox.Controls.Add(this.label20);
-            this.billGroupBox.Controls.Add(this.label19);
+            this.billGroupBox.Controls.Add(this.addressLabel);
+            this.billGroupBox.Controls.Add(this.phoneLabel);
+            this.billGroupBox.Controls.Add(this.emailLabel);
+            this.billGroupBox.Controls.Add(this.lastnameLabel);
+            this.billGroupBox.Controls.Add(this.firstnameLabel);
             this.billGroupBox.Controls.Add(this.label18);
-            this.billGroupBox.Controls.Add(this.paymentMethodSelection);
+            this.billGroupBox.Controls.Add(this.paymentMethodSelectionComboBox);
             this.billGroupBox.Controls.Add(this.label17);
             this.billGroupBox.Controls.Add(this.label16);
             this.billGroupBox.Controls.Add(this.label15);
@@ -369,78 +391,55 @@
             this.billGroupBox.TabStop = false;
             this.billGroupBox.Text = "Bill";
             // 
-            // label4
+            // addressLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 151);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 16);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Results:";
+            this.addressLabel.AutoSize = true;
+            this.addressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressLabel.Location = new System.Drawing.Point(852, 138);
+            this.addressLabel.Name = "addressLabel";
+            this.addressLabel.Size = new System.Drawing.Size(38, 16);
+            this.addressLabel.TabIndex = 41;
+            this.addressLabel.Text = "Test";
             // 
-            // searchResultsLabel
+            // phoneLabel
             // 
-            this.searchResultsLabel.AutoSize = true;
-            this.searchResultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchResultsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.searchResultsLabel.Location = new System.Drawing.Point(27, 181);
-            this.searchResultsLabel.Name = "searchResultsLabel";
-            this.searchResultsLabel.Size = new System.Drawing.Size(78, 16);
-            this.searchResultsLabel.TabIndex = 23;
-            this.searchResultsLabel.Text = "Not Found";
+            this.phoneLabel.AutoSize = true;
+            this.phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneLabel.Location = new System.Drawing.Point(852, 111);
+            this.phoneLabel.Name = "phoneLabel";
+            this.phoneLabel.Size = new System.Drawing.Size(38, 16);
+            this.phoneLabel.TabIndex = 40;
+            this.phoneLabel.Text = "Test";
             // 
-            // label13
+            // emailLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(683, 24);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(75, 16);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "First Name:";
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.Location = new System.Drawing.Point(852, 82);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(38, 16);
+            this.emailLabel.TabIndex = 39;
+            this.emailLabel.Text = "Test";
             // 
-            // label14
+            // lastnameLabel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(683, 53);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(75, 16);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "Last Name:";
+            this.lastnameLabel.AutoSize = true;
+            this.lastnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastnameLabel.Location = new System.Drawing.Point(852, 53);
+            this.lastnameLabel.Name = "lastnameLabel";
+            this.lastnameLabel.Size = new System.Drawing.Size(38, 16);
+            this.lastnameLabel.TabIndex = 38;
+            this.lastnameLabel.Text = "Test";
             // 
-            // label15
+            // firstnameLabel
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(683, 82);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(47, 16);
-            this.label15.TabIndex = 32;
-            this.label15.Text = "Email: ";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(683, 111);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 16);
-            this.label16.TabIndex = 33;
-            this.label16.Text = "Phone:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(683, 138);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(58, 16);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "Address";
-            // 
-            // paymentMethodSelection
-            // 
-            this.paymentMethodSelection.FormattingEnabled = true;
-            this.paymentMethodSelection.Location = new System.Drawing.Point(855, 167);
-            this.paymentMethodSelection.Name = "paymentMethodSelection";
-            this.paymentMethodSelection.Size = new System.Drawing.Size(121, 24);
-            this.paymentMethodSelection.TabIndex = 35;
+            this.firstnameLabel.AutoSize = true;
+            this.firstnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstnameLabel.Location = new System.Drawing.Point(852, 24);
+            this.firstnameLabel.Name = "firstnameLabel";
+            this.firstnameLabel.Size = new System.Drawing.Size(38, 16);
+            this.firstnameLabel.TabIndex = 37;
+            this.firstnameLabel.Text = "Test";
             // 
             // label18
             // 
@@ -451,41 +450,58 @@
             this.label18.TabIndex = 36;
             this.label18.Text = "Payment Method:";
             // 
-            // label19
+            // paymentMethodSelectionComboBox
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(852, 24);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(34, 16);
-            this.label19.TabIndex = 37;
-            this.label19.Text = "Test";
+            this.paymentMethodSelectionComboBox.FormattingEnabled = true;
+            this.paymentMethodSelectionComboBox.Location = new System.Drawing.Point(855, 167);
+            this.paymentMethodSelectionComboBox.Name = "paymentMethodSelectionComboBox";
+            this.paymentMethodSelectionComboBox.Size = new System.Drawing.Size(180, 24);
+            this.paymentMethodSelectionComboBox.TabIndex = 35;
             // 
-            // label20
+            // label17
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(852, 53);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(34, 16);
-            this.label20.TabIndex = 38;
-            this.label20.Text = "Test";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(683, 138);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(58, 16);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "Address";
             // 
-            // label21
+            // label16
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(852, 82);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(34, 16);
-            this.label21.TabIndex = 39;
-            this.label21.Text = "Test";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(683, 111);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(49, 16);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Phone:";
             // 
-            // label22
+            // label15
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(852, 111);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(34, 16);
-            this.label22.TabIndex = 40;
-            this.label22.Text = "Test";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(683, 82);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(47, 16);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Email: ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(683, 53);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(75, 16);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Last Name:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(683, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(75, 16);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "First Name:";
             // 
             // AddOrder
             // 
@@ -552,10 +568,11 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox paymentMethodSelection;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox paymentMethodSelectionComboBox;
+        private System.Windows.Forms.Label phoneLabel;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.Label lastnameLabel;
+        private System.Windows.Forms.Label firstnameLabel;
+        private System.Windows.Forms.Label addressLabel;
     }
 }
