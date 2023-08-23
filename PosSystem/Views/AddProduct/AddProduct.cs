@@ -35,6 +35,7 @@ namespace PosSystem
             productDescription = DescriptionTextBox.Text;
             productStock = QuantityNumericUpDown.Value;
 
+            // This if clause checks whether all the required fields are filled by the user
             if ((productName == "") || (productDescription == "") || (PriceTextBox.Text == ""))
             {
                 MessageBox.Show("Please fill all the required fields.");

@@ -29,10 +29,10 @@ namespace PosSystem
 
         private void clearForm()
         {
-            NProduct_Name.Text = "";
-            NDescription.Text = "";
-            NQuanty.Value = 1;
-            NPrc.Text = "0";
+            productName.Text = "";
+            productDescription.Text = "";
+            productQuantity.Value = 1;
+            productPrice.Text = "0";
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -62,10 +62,10 @@ namespace PosSystem
         {
 
             // below are the new product details(N)for New Details
-            NProdName = NProduct_Name.Text;
-            NProdDescrip = NDescription.Text;
-            NQty = int.Parse(NQuanty.Value.ToString());
-            NPrice = double.Parse(NPrc.Text);
+            NProdName = productName.Text;
+            NProdDescrip = productDescription.Text;
+            NQty = int.Parse(productQuantity.Value.ToString());
+            NPrice = double.Parse(productPrice.Text);
 
             string query = $"UPDATE products SET name=@val1, stock=@val2, price=@val3, description=@val4 WHERE id=@val5";
             SqlCommand cmd = new SqlCommand(query, db.Connection);
@@ -97,7 +97,7 @@ namespace PosSystem
         {
             if (db.IsConnected())
             {
-                string query = SearchBoxTextBox.Text;
+                string query = searchQueryTextBox.Text;
                 SqlCommand cmd = new SqlCommand("SELECT * FROM products WHERE name LIKE @val1", db.Connection);
                 cmd.Parameters.AddWithValue("@val1", "%" + query + "%");
 
@@ -113,10 +113,10 @@ namespace PosSystem
 
                 if (reader.HasRows)
                 {
-                    NProduct_Name.Text = EProdName;
-                    NDescription.Text = EProdDescrip;
-                    NQuanty.Value = Decimal.Parse(EQty.ToString());
-                    NPrc.Text = EPrice.ToString();
+                    productName.Text = EProdName;
+                    productDescription.Text = EProdDescrip;
+                    productQuantity.Value = Decimal.Parse(EQty.ToString());
+                    productPrice.Text = EPrice.ToString();
                 }
 
                 reader.Close();
@@ -127,12 +127,12 @@ namespace PosSystem
         {
             try
             {
-                double.Parse(NPrc.Text);
+                double.Parse(productPrice.Text);
                 return;
             } catch
             {
                 MessageBox.Show("Invalid Input!", "POS");
-                NPrc.Text = "0";
+                productPrice.Text = "0";
                 return;
             }
         }
