@@ -27,9 +27,9 @@ namespace PosSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddOrder printBillForm = new AddOrder();
-            printBillForm.SetRole("ADMIN");
-            printBillForm.Show();
+            AddOrder addOrderForm = new AddOrder();
+            addOrderForm.SetRole("ADMIN");
+            addOrderForm.Show();
             this.Hide();
         }
 

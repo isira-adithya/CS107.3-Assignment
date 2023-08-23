@@ -32,6 +32,10 @@ namespace PosSystem
         {
             InitializeComponent();
             product = new Product();
+
+            billDataGridView.Columns.Add("Name", "Name");
+            billDataGridView.Columns.Add("Quantity", "Quantity");
+            billDataGridView.Columns.Add("Price", "Price");
         }
         public void SetRole(string _role)
         {
@@ -98,6 +102,14 @@ namespace PosSystem
             searchResultsLabel.Text = "Not Found";
             AddProductBtn.Enabled = false;
             productNameInputBox.Text = "";
+            quantityNumericUpDown.Value = decimal.Zero;
+
+            updateBill();
+        }
+
+        private void updateBill()
+        {
+            // Updating the billDataGridView
         }
     }
 }

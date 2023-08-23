@@ -50,7 +50,7 @@
             this.customerDetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.saveCustomerBtn = new System.Windows.Forms.Button();
             this.addProductsGroupBox = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.billDataGridView = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.totalPriceLabel = new System.Windows.Forms.Label();
             this.printBtn = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
             this.customerDetailsGroupBox.SuspendLayout();
             this.addProductsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -280,20 +280,20 @@
             this.addProductsGroupBox.TabStop = false;
             this.addProductsGroupBox.Text = "Add Products";
             // 
-            // dataGridView1
+            // billDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1062, 355);
-            this.dataGridView1.TabIndex = 24;
+            this.billDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.billDataGridView.Location = new System.Drawing.Point(13, 24);
+            this.billDataGridView.Name = "billDataGridView";
+            this.billDataGridView.RowHeadersWidth = 51;
+            this.billDataGridView.RowTemplate.Height = 24;
+            this.billDataGridView.Size = new System.Drawing.Size(640, 355);
+            this.billDataGridView.TabIndex = 24;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(926, 394);
+            this.label9.Location = new System.Drawing.Point(929, 306);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 16);
             this.label9.TabIndex = 26;
@@ -303,7 +303,7 @@
             // 
             this.totalPriceLabel.AutoSize = true;
             this.totalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPriceLabel.Location = new System.Drawing.Point(1045, 394);
+            this.totalPriceLabel.Location = new System.Drawing.Point(1048, 306);
             this.totalPriceLabel.Name = "totalPriceLabel";
             this.totalPriceLabel.Size = new System.Drawing.Size(15, 16);
             this.totalPriceLabel.TabIndex = 27;
@@ -311,7 +311,7 @@
             // 
             // printBtn
             // 
-            this.printBtn.Location = new System.Drawing.Point(1000, 447);
+            this.printBtn.Location = new System.Drawing.Point(1003, 359);
             this.printBtn.Name = "printBtn";
             this.printBtn.Size = new System.Drawing.Size(75, 23);
             this.printBtn.TabIndex = 28;
@@ -320,7 +320,7 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(892, 447);
+            this.saveBtn.Location = new System.Drawing.Point(895, 359);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 29;
@@ -333,11 +333,11 @@
             this.groupBox1.Controls.Add(this.printBtn);
             this.groupBox1.Controls.Add(this.totalPriceLabel);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.billDataGridView);
             this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(14, 469);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1093, 489);
+            this.groupBox1.Size = new System.Drawing.Size(1093, 407);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bill";
@@ -367,7 +367,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1123, 971);
+            this.ClientSize = new System.Drawing.Size(1123, 899);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.addProductsGroupBox);
             this.Controls.Add(this.customerDetailsGroupBox);
@@ -381,7 +381,7 @@
             this.customerDetailsGroupBox.PerformLayout();
             this.addProductsGroupBox.ResumeLayout(false);
             this.addProductsGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -412,7 +412,7 @@
         private System.Windows.Forms.Button AddProductBtn;
         private System.Windows.Forms.GroupBox customerDetailsGroupBox;
         private System.Windows.Forms.GroupBox addProductsGroupBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView billDataGridView;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label totalPriceLabel;
         private System.Windows.Forms.Button printBtn;
