@@ -41,19 +41,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(180, 41);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(195, 46);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 29);
+            this.label1.Size = new System.Drawing.Size(149, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Admin Home";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Text = "Home - Admin";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // viewProductBtn
             // 
-            this.viewProductBtn.Location = new System.Drawing.Point(197, 338);
-            this.viewProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.viewProductBtn.Location = new System.Drawing.Point(202, 112);
+            this.viewProductBtn.Margin = new System.Windows.Forms.Padding(4);
             this.viewProductBtn.Name = "viewProductBtn";
             this.viewProductBtn.Size = new System.Drawing.Size(120, 42);
             this.viewProductBtn.TabIndex = 1;
@@ -63,8 +63,8 @@
             // 
             // addProductBtn
             // 
-            this.addProductBtn.Location = new System.Drawing.Point(16, 338);
-            this.addProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addProductBtn.Location = new System.Drawing.Point(21, 112);
+            this.addProductBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addProductBtn.Name = "addProductBtn";
             this.addProductBtn.Size = new System.Drawing.Size(111, 42);
             this.addProductBtn.TabIndex = 2;
@@ -74,8 +74,8 @@
             // 
             // editProductBtn
             // 
-            this.editProductBtn.Location = new System.Drawing.Point(384, 338);
-            this.editProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editProductBtn.Location = new System.Drawing.Point(389, 112);
+            this.editProductBtn.Margin = new System.Windows.Forms.Padding(4);
             this.editProductBtn.Name = "editProductBtn";
             this.editProductBtn.Size = new System.Drawing.Size(147, 42);
             this.editProductBtn.TabIndex = 3;
@@ -85,8 +85,8 @@
             // 
             // deleteProductBtn
             // 
-            this.deleteProductBtn.Location = new System.Drawing.Point(384, 407);
-            this.deleteProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteProductBtn.Location = new System.Drawing.Point(389, 181);
+            this.deleteProductBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteProductBtn.Name = "deleteProductBtn";
             this.deleteProductBtn.Size = new System.Drawing.Size(145, 42);
             this.deleteProductBtn.TabIndex = 4;
@@ -96,8 +96,8 @@
             // 
             // printBillBtn
             // 
-            this.printBillBtn.Location = new System.Drawing.Point(16, 474);
-            this.printBillBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.printBillBtn.Location = new System.Drawing.Point(21, 248);
+            this.printBillBtn.Margin = new System.Windows.Forms.Padding(4);
             this.printBillBtn.Name = "printBillBtn";
             this.printBillBtn.Size = new System.Drawing.Size(111, 42);
             this.printBillBtn.TabIndex = 5;
@@ -107,8 +107,8 @@
             // 
             // addUserBtn
             // 
-            this.addUserBtn.Location = new System.Drawing.Point(16, 407);
-            this.addUserBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addUserBtn.Location = new System.Drawing.Point(21, 181);
+            this.addUserBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addUserBtn.Name = "addUserBtn";
             this.addUserBtn.Size = new System.Drawing.Size(111, 42);
             this.addUserBtn.TabIndex = 7;
@@ -118,8 +118,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(197, 407);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(202, 181);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 42);
             this.button1.TabIndex = 9;
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 538);
+            this.ClientSize = new System.Drawing.Size(549, 317);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.addUserBtn);
             this.Controls.Add(this.printBillBtn);
@@ -140,7 +140,7 @@
             this.Controls.Add(this.addProductBtn);
             this.Controls.Add(this.viewProductBtn);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminHome";
             this.Text = "Home - Admin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminHome_FormClosed);

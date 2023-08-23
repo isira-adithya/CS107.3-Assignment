@@ -31,29 +31,38 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.firstnameInputBox = new System.Windows.Forms.TextBox();
+            this.lastnameInputBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.emailInputBox = new System.Windows.Forms.TextBox();
+            this.phoneInputBox = new System.Windows.Forms.TextBox();
+            this.addressInputBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.productNameInputBox = new System.Windows.Forms.TextBox();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.AddProductBtn = new System.Windows.Forms.Button();
+            this.customerDetailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.saveCustomerBtn = new System.Windows.Forms.Button();
+            this.addProductsGroupBox = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.label9 = new System.Windows.Forms.Label();
+            this.totalPriceLabel = new System.Windows.Forms.Label();
+            this.printBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.searchResultsLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
+            this.customerDetailsGroupBox.SuspendLayout();
+            this.addProductsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -86,19 +95,19 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Last Name";
             // 
-            // textBox1
+            // firstnameInputBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(267, 22);
-            this.textBox1.TabIndex = 4;
+            this.firstnameInputBox.Location = new System.Drawing.Point(13, 78);
+            this.firstnameInputBox.Name = "firstnameInputBox";
+            this.firstnameInputBox.Size = new System.Drawing.Size(267, 22);
+            this.firstnameInputBox.TabIndex = 4;
             // 
-            // textBox2
+            // lastnameInputBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(323, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(267, 22);
-            this.textBox2.TabIndex = 5;
+            this.lastnameInputBox.Location = new System.Drawing.Point(323, 81);
+            this.lastnameInputBox.Name = "lastnameInputBox";
+            this.lastnameInputBox.Size = new System.Drawing.Size(267, 22);
+            this.lastnameInputBox.TabIndex = 5;
             // 
             // label5
             // 
@@ -127,26 +136,26 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Address*";
             // 
-            // textBox3
+            // emailInputBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(13, 161);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(267, 22);
-            this.textBox3.TabIndex = 9;
+            this.emailInputBox.Location = new System.Drawing.Point(13, 161);
+            this.emailInputBox.Name = "emailInputBox";
+            this.emailInputBox.Size = new System.Drawing.Size(267, 22);
+            this.emailInputBox.TabIndex = 9;
             // 
-            // textBox4
+            // phoneInputBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(323, 164);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(267, 22);
-            this.textBox4.TabIndex = 10;
+            this.phoneInputBox.Location = new System.Drawing.Point(323, 164);
+            this.phoneInputBox.Name = "phoneInputBox";
+            this.phoneInputBox.Size = new System.Drawing.Size(267, 22);
+            this.phoneInputBox.TabIndex = 10;
             // 
-            // textBox5
+            // addressInputBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(13, 246);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(267, 22);
-            this.textBox5.TabIndex = 11;
+            this.addressInputBox.Location = new System.Drawing.Point(13, 246);
+            this.addressInputBox.Name = "addressInputBox";
+            this.addressInputBox.Size = new System.Drawing.Size(267, 22);
+            this.addressInputBox.TabIndex = 11;
             // 
             // label8
             // 
@@ -177,112 +186,203 @@
             this.label12.TabIndex = 16;
             this.label12.Text = "Search the product first then add the product to the bill";
             // 
-            // textBox6
+            // productNameInputBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(207, 73);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(267, 22);
-            this.textBox6.TabIndex = 17;
+            this.productNameInputBox.Location = new System.Drawing.Point(173, 73);
+            this.productNameInputBox.Name = "productNameInputBox";
+            this.productNameInputBox.Size = new System.Drawing.Size(206, 22);
+            this.productNameInputBox.TabIndex = 17;
             // 
-            // button1
+            // searchBtn
             // 
-            this.button1.Location = new System.Drawing.Point(30, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.searchBtn.Location = new System.Drawing.Point(27, 110);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchBtn.TabIndex = 18;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 162);
+            this.label11.Location = new System.Drawing.Point(25, 268);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(58, 16);
             this.label11.TabIndex = 19;
             this.label11.Text = "Quantity:";
             // 
-            // numericUpDown1
+            // quantityNumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(207, 156);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 20;
+            this.quantityNumericUpDown.Location = new System.Drawing.Point(173, 266);
+            this.quantityNumericUpDown.Name = "quantityNumericUpDown";
+            this.quantityNumericUpDown.Size = new System.Drawing.Size(120, 22);
+            this.quantityNumericUpDown.TabIndex = 20;
             // 
-            // button2
+            // AddProductBtn
             // 
-            this.button2.Location = new System.Drawing.Point(30, 198);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AddProductBtn.Enabled = false;
+            this.AddProductBtn.Location = new System.Drawing.Point(27, 302);
+            this.AddProductBtn.Name = "AddProductBtn";
+            this.AddProductBtn.Size = new System.Drawing.Size(75, 23);
+            this.AddProductBtn.TabIndex = 21;
+            this.AddProductBtn.Text = "Add";
+            this.AddProductBtn.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // customerDetailsGroupBox
             // 
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 73);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(618, 342);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Customer Details";
+            this.customerDetailsGroupBox.Controls.Add(this.saveCustomerBtn);
+            this.customerDetailsGroupBox.Controls.Add(this.label8);
+            this.customerDetailsGroupBox.Controls.Add(this.addressInputBox);
+            this.customerDetailsGroupBox.Controls.Add(this.phoneInputBox);
+            this.customerDetailsGroupBox.Controls.Add(this.emailInputBox);
+            this.customerDetailsGroupBox.Controls.Add(this.label7);
+            this.customerDetailsGroupBox.Controls.Add(this.label6);
+            this.customerDetailsGroupBox.Controls.Add(this.label5);
+            this.customerDetailsGroupBox.Controls.Add(this.lastnameInputBox);
+            this.customerDetailsGroupBox.Controls.Add(this.firstnameInputBox);
+            this.customerDetailsGroupBox.Controls.Add(this.label3);
+            this.customerDetailsGroupBox.Controls.Add(this.label2);
+            this.customerDetailsGroupBox.Location = new System.Drawing.Point(12, 74);
+            this.customerDetailsGroupBox.Name = "customerDetailsGroupBox";
+            this.customerDetailsGroupBox.Size = new System.Drawing.Size(618, 342);
+            this.customerDetailsGroupBox.TabIndex = 22;
+            this.customerDetailsGroupBox.TabStop = false;
+            this.customerDetailsGroupBox.Text = "Customer Details";
             // 
-            // groupBox2
+            // saveCustomerBtn
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(670, 74);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(488, 341);
-            this.groupBox2.TabIndex = 23;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Add Products";
+            this.saveCustomerBtn.Location = new System.Drawing.Point(515, 296);
+            this.saveCustomerBtn.Name = "saveCustomerBtn";
+            this.saveCustomerBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveCustomerBtn.TabIndex = 13;
+            this.saveCustomerBtn.Text = "Save";
+            this.saveCustomerBtn.UseVisualStyleBackColor = true;
+            this.saveCustomerBtn.Click += new System.EventHandler(this.saveCustomerBtn_Click);
+            // 
+            // addProductsGroupBox
+            // 
+            this.addProductsGroupBox.Controls.Add(this.searchResultsLabel);
+            this.addProductsGroupBox.Controls.Add(this.label4);
+            this.addProductsGroupBox.Controls.Add(this.AddProductBtn);
+            this.addProductsGroupBox.Controls.Add(this.quantityNumericUpDown);
+            this.addProductsGroupBox.Controls.Add(this.label11);
+            this.addProductsGroupBox.Controls.Add(this.searchBtn);
+            this.addProductsGroupBox.Controls.Add(this.productNameInputBox);
+            this.addProductsGroupBox.Controls.Add(this.label12);
+            this.addProductsGroupBox.Controls.Add(this.label10);
+            this.addProductsGroupBox.Enabled = false;
+            this.addProductsGroupBox.Location = new System.Drawing.Point(670, 74);
+            this.addProductsGroupBox.Name = "addProductsGroupBox";
+            this.addProductsGroupBox.Size = new System.Drawing.Size(437, 341);
+            this.addProductsGroupBox.TabIndex = 23;
+            this.addProductsGroupBox.TabStop = false;
+            this.addProductsGroupBox.Text = "Add Products";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 493);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1146, 355);
+            this.dataGridView1.Size = new System.Drawing.Size(1062, 355);
             this.dataGridView1.TabIndex = 24;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(926, 394);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 16);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Total Price:";
+            // 
+            // totalPriceLabel
+            // 
+            this.totalPriceLabel.AutoSize = true;
+            this.totalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPriceLabel.Location = new System.Drawing.Point(1045, 394);
+            this.totalPriceLabel.Name = "totalPriceLabel";
+            this.totalPriceLabel.Size = new System.Drawing.Size(15, 16);
+            this.totalPriceLabel.TabIndex = 27;
+            this.totalPriceLabel.Text = "0";
+            // 
+            // printBtn
+            // 
+            this.printBtn.Location = new System.Drawing.Point(1000, 447);
+            this.printBtn.Name = "printBtn";
+            this.printBtn.Size = new System.Drawing.Size(75, 23);
+            this.printBtn.TabIndex = 28;
+            this.printBtn.Text = "Print";
+            this.printBtn.UseVisualStyleBackColor = true;
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.Location = new System.Drawing.Point(892, 447);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.TabIndex = 29;
+            this.saveBtn.Text = "Save";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.saveBtn);
+            this.groupBox1.Controls.Add(this.printBtn);
+            this.groupBox1.Controls.Add(this.totalPriceLabel);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Enabled = false;
+            this.groupBox1.Location = new System.Drawing.Point(14, 469);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1093, 489);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Bill";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 151);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 16);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Results:";
+            // 
+            // searchResultsLabel
+            // 
+            this.searchResultsLabel.AutoSize = true;
+            this.searchResultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchResultsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.searchResultsLabel.Location = new System.Drawing.Point(27, 181);
+            this.searchResultsLabel.Name = "searchResultsLabel";
+            this.searchResultsLabel.Size = new System.Drawing.Size(78, 16);
+            this.searchResultsLabel.TabIndex = 23;
+            this.searchResultsLabel.Text = "Not Found";
             // 
             // AddOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 860);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.groupBox2);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1123, 971);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.addProductsGroupBox);
+            this.Controls.Add(this.customerDetailsGroupBox);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddOrder";
             this.Text = "Add Order";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.goBackToPreviousForm);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).EndInit();
+            this.customerDetailsGroupBox.ResumeLayout(false);
+            this.customerDetailsGroupBox.PerformLayout();
+            this.addProductsGroupBox.ResumeLayout(false);
+            this.addProductsGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,24 +393,32 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox firstnameInputBox;
+        private System.Windows.Forms.TextBox lastnameInputBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox emailInputBox;
+        private System.Windows.Forms.TextBox phoneInputBox;
+        private System.Windows.Forms.TextBox addressInputBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox productNameInputBox;
+        private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.NumericUpDown quantityNumericUpDown;
+        private System.Windows.Forms.Button AddProductBtn;
+        private System.Windows.Forms.GroupBox customerDetailsGroupBox;
+        private System.Windows.Forms.GroupBox addProductsGroupBox;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label totalPriceLabel;
+        private System.Windows.Forms.Button printBtn;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button saveCustomerBtn;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label searchResultsLabel;
     }
 }

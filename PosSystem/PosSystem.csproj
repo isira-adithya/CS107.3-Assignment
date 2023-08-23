@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Account.cs" />
+    <Compile Include="Classes\Product.cs" />
     <Compile Include="Views\ManageAccount\ManageAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +220,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\ViewAccount\ViewAccount.resx">
       <DependentUpon>ViewAccount.cs</DependentUpon>
@@ -251,6 +253,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>pos-db.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\logo_transparent.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
