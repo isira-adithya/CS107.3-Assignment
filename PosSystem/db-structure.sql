@@ -58,5 +58,87 @@ CREATE TABLE orderproducts (
 
 
 /* Adding Users */
-INSERT INTO users(first_name, last_name, username, password, email, role) VALUES ('Isira', 'Adithya', 'isira_adithya', 'pass123', 'me@isiraadithya.com', 'ADMIN');
-INSERT INTO users(first_name, last_name, username, password, email, role) VALUES ('Isira', 'Adithya (User Account)', 'isira_adithya_user', 'pass123', 'user@isiraadithya.com', 'USER');
+INSERT INTO users(first_name, last_name, username, password, email, role) VALUES ('Isira', 'Adithya', 'admin', 'admin123', 'me@isiraadithya.com', 'ADMIN');
+INSERT INTO users(first_name, last_name, username, password, email, role) VALUES ('Isira', 'Adithya (User Account)', 'user', 'user123', 'user@isiraadithya.com', 'USER');
+
+
+/* Adding Products */
+-- Inserting a laptop
+INSERT INTO products (name, stock, price, description)
+VALUES ('Laptop X1', 50, 999.99, 'Powerful laptop with high-resolution display.');
+
+-- Inserting a smartphone
+INSERT INTO products (name, stock, price, description)
+VALUES ('Smartphone S10', 100, 799.99, 'Latest model with advanced camera features.');
+
+-- Inserting a gaming console
+INSERT INTO products (name, stock, price, description)
+VALUES ('Gaming Console G2', 25, 499.99, 'Next-gen gaming console for immersive gaming experience.');
+
+-- Inserting a book
+INSERT INTO products (name, stock, price, description)
+VALUES ('Book: The Adventure Begins', 200, 19.99, 'First book in an epic fantasy series.');
+
+-- Inserting a fitness tracker
+INSERT INTO products (name, stock, price, description)
+VALUES ('Fitness Tracker FT1', 75, 89.99, 'Monitor your daily activity and health.');
+
+-- Inserting a coffee maker
+INSERT INTO products (name, stock, price, description)
+VALUES ('Coffee Maker C3', 30, 59.99, 'Brew delicious coffee in minutes.');
+
+-- Inserting a portable speaker
+INSERT INTO products (name, stock, price, description)
+VALUES ('Portable Speaker P2', 50, 129.99, 'High-quality speaker for music on the go.');
+
+-- Inserting a winter jacket
+INSERT INTO products (name, stock, price, description)
+VALUES ('Winter Jacket WJ1', 20, 149.99, 'Stay warm and stylish in the cold.');
+
+-- Inserting a board game
+INSERT INTO products (name, stock, price, description)
+VALUES ('Board Game B4', 40, 34.99, 'Fun strategy game for friends and family.');
+
+-- Inserting a gardening kit
+INSERT INTO products (name, stock, price, description)
+VALUES ('Gardening Kit G5', 15, 79.99, 'Start your own garden with this comprehensive kit.');
+
+-- Inserting a wireless headphones
+INSERT INTO products (name, stock, price, description)
+VALUES ('Wireless Headphones H3', 80, 149.99, 'Immerse yourself in music with these high-quality wireless headphones.');
+
+-- Inserting a cooking utensil set
+INSERT INTO products (name, stock, price, description)
+VALUES ('Cooking Utensil Set U2', 60, 39.99, 'Complete set of kitchen utensils for your cooking needs.');
+
+-- Inserting a bicycle
+INSERT INTO products (name, stock, price, description)
+VALUES ('Mountain Bike M7', 15, 699.99, 'Durable mountain bike for off-road adventures.');
+
+-- Inserting a pet grooming kit
+INSERT INTO products (name, stock, price, description)
+VALUES ('Pet Grooming Kit G7', 35, 29.99, 'Keep your furry friend looking neat and tidy with this grooming kit.');
+
+-- Inserting a designer handbag
+INSERT INTO products (name, stock, price, description)
+VALUES ('Designer Handbag D5', 10, 599.99, 'Elegant handbag from a renowned fashion brand.');
+
+-- Inserting a home security camera
+INSERT INTO products (name, stock, price, description)
+VALUES ('Security Camera S8', 50, 129.99, 'Monitor your home with this high-definition security camera.');
+
+-- Inserting a camping tent
+INSERT INTO products (name, stock, price, description)
+VALUES ('Camping Tent T3', 25, 199.99, 'Spacious tent for outdoor camping trips.');
+
+-- Inserting a musical keyboard
+INSERT INTO products (name, stock, price, description)
+VALUES ('Musical Keyboard K6', 10, 299.99, 'Express your musical creativity with this versatile keyboard.');
+
+-- Inserting a baby stroller
+INSERT INTO products (name, stock, price, description)
+VALUES ('Baby Stroller S4', 40, 129.99, 'Comfortable and convenient stroller for your little one.');
+
+-- Inserting a hiking backpack
+INSERT INTO products (name, stock, price, description)
+VALUES ('Hiking Backpack B9', 20, 79.99, 'Carry your gear comfortably on your outdoor adventures.');

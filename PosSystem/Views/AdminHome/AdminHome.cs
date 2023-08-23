@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PosSystem.Views.ViewAccount;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,7 +37,7 @@ namespace PosSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            EditProduct editProductForm = new EditProduct();
+            ManageProduct editProductForm = new ManageProduct();
             editProductForm.Show();
             this.Hide();
         }
@@ -68,6 +69,13 @@ namespace PosSystem
         private void AdminHome_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ViewAccount viewAccountForm = new ViewAccount();
+            viewAccountForm.Show();
+            this.Hide();
         }
     }
 }

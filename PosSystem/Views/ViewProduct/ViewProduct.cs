@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,12 @@ namespace PosSystem
     public partial class ViewProduct : Form
     {
         private string role;
+        private Database db;
         public ViewProduct()
         {
             InitializeComponent();
+            db = new Database();
+            db.Connect();
         }
 
         public void SetRole(string _role)
@@ -40,8 +44,13 @@ namespace PosSystem
 
         private void ViewProduct_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_pos_dbDataSet.products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this._pos_dbDataSet.products);
+            string qu = "SELECT name as Name,stock as 'Current Stock',price as Price  FROM products;";
+            SqlDataAdapter dt = new SqlDataAdapter(qu, db.Connection);
+            DataSet ds = new DataSet();
+            dt.Fill(ds, "ProductsTable");
+
+            productsDataGrid.DataSource = ds;
+            productsDataGrid.DataMember = "ProductsTable";
 
         }
     }
