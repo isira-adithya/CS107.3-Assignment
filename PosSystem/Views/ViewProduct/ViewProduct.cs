@@ -22,6 +22,7 @@ namespace PosSystem
             db.Connect();
         }
 
+        // Setter - Encapsulation
         public void SetRole(string _role)
         {
             this.role = _role;
@@ -44,7 +45,7 @@ namespace PosSystem
 
         private void ViewProduct_Load(object sender, EventArgs e)
         {
-            string qu = "SELECT name as Name,stock as 'Current Stock',price as Price  FROM products;";
+            string qu = "SELECT name as Name,stock as 'Current Stock',price as Price FROM products;";
             SqlDataAdapter dt = new SqlDataAdapter(qu, db.Connection);
             DataSet ds = new DataSet();
             dt.Fill(ds, "ProductsTable");

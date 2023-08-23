@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
+using PosSystem.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,11 @@ namespace PosSystem
 {
     public partial class AddProduct : Form
     {
+        Product product;
         public AddProduct()
         {
             InitializeComponent();
+            product = new Product();
         }
 
         private void product_add_Click(object sender, EventArgs e)
@@ -39,29 +42,18 @@ namespace PosSystem
             }
 
             Price = double.Parse(PriceTextBox.Text);
-            Database db = new Database();
-            db.Connect();
 
-            if (db.IsConnected())
+            bool result = product.createNewProduct(ProdName, ProdDescrip, int.Parse(Qty.ToString()), Price);
+
+            if (result)
             {
-                string query = $"INSERT INTO products(name, stock, price, description) VALUES (@val1, @val2, @val3, @val4);";
-                SqlCommand cmd = new SqlCommand(query, db.Connection);
-                cmd.Parameters.AddWithValue("@val1", ProdName);
-                cmd.Parameters.AddWithValue("@val2", Qty);
-                cmd.Parameters.AddWithValue("@val3", Price);
-                cmd.Parameters.AddWithValue("@val4", ProdDescrip);
-                int result = cmd.ExecuteNonQuery();
-                
-                if (result == 1)
-                {
-                    MessageBox.Show("New product has been added.", "POS");
-                    AddProCancel_Click(sender, e);
-                } else
-                {
-                    MessageBox.Show("Something went wrong.", "POS");
-                }
+                MessageBox.Show("New product has been added.", "POS");
+                AddProCancel_Click(sender, e);
             }
-
+            else
+            {
+                MessageBox.Show("Something went wrong.", "POS");
+            }
 
         }
 
