@@ -26,24 +26,24 @@ namespace PosSystem
         private void product_add_Click(object sender, EventArgs e)
         {
             // instead of Product i have used (Prod)
-            string ProdName;
-            string ProdDescrip;
-            decimal Qty;
-            double Price;
+            string productName;
+            string productDescription;
+            decimal productStock;
+            double productPrice;
 
-            ProdName = ProductNameTextBox.Text;
-            ProdDescrip = DescriptionTextBox.Text;
-            Qty = QuantityNumericUpDown.Value;
+            productName = ProductNameTextBox.Text;
+            productDescription = DescriptionTextBox.Text;
+            productStock = QuantityNumericUpDown.Value;
 
-            if ((ProdName == "") || (ProdDescrip == "") || (PriceTextBox.Text == ""))
+            if ((productName == "") || (productDescription == "") || (PriceTextBox.Text == ""))
             {
                 MessageBox.Show("Please fill all the required fields.");
                 return;
             }
 
-            Price = double.Parse(PriceTextBox.Text);
+            productPrice = double.Parse(PriceTextBox.Text);
 
-            bool result = product.createNewProduct(ProdName, ProdDescrip, int.Parse(Qty.ToString()), Price);
+            bool result = product.createNewProduct(productName, productDescription, int.Parse(productStock.ToString()), productPrice);
 
             if (result)
             {
