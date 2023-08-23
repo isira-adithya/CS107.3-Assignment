@@ -40,7 +40,6 @@ CREATE TABLE orders (
 	customer_address VARCHAR(1024) NOT NULL, 
 	customer_email VARCHAR(1024) NOT NULL, 
 	date_time DATETIME NOT NULL, 
-	phone_number VARCHAR(1024) NOT NULL, 
 	amount FLOAT NOT NULL, 
 	paymentMethod VARCHAR(1024) NOT NULL
 );

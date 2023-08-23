@@ -174,6 +174,10 @@ namespace PosSystem
             totalPriceLabel.Text = totalPrice.ToString() + " LKR";
         }
 
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class PaymentMethod
