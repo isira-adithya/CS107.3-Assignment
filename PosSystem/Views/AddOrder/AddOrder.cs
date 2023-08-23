@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace PosSystem
     {
         private string role;
         private Product product;
+        private Bitmap ssbitmap;
 
         // Variables
 
@@ -220,6 +222,28 @@ namespace PosSystem
             addProductsGroupBox.Enabled = false;
             billGroupBox.Enabled = false;
             productNameInputBox.Text = "";
+        }
+
+
+        // Following 2 functions were taken from https://www.aspsnippets.com/Articles/Print-contents-of-Form-in-Windows-Forms-WinForms-Application-using-C-and-VBNet.aspx
+        private void printBtn_Click(object sender, EventArgs e)
+        {
+            Graphics myGraphics = this.CreateGraphics();
+            Size s = this.Size;
+            ssbitmap = new Bitmap(s.Width, s.Height, myGraphics);
+            Graphics memoryGraphics = Graphics.FromImage(ssbitmap);
+            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
+
+            //Show the Print Preview Dialog.
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.PrintPreviewControl.Zoom = 1;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            //Print the contents.
+            e.Graphics.DrawImage(ssbitmap, 0, 0);
         }
     }
 
