@@ -62,7 +62,9 @@ INSERT INTO users(first_name, last_name, username, password, email, role) VALUES
 INSERT INTO users(first_name, last_name, username, password, email, role) VALUES ('Isira', 'Adithya (User Account)', 'user', 'user123', 'user@isiraadithya.com', 'USER');
 
 
+
 /* Adding Products */
+
 -- Inserting a laptop
 INSERT INTO products (name, stock, price, description)
 VALUES ('Laptop X1', 50, 999.99, 'Powerful laptop with high-resolution display.');
@@ -142,3 +144,52 @@ VALUES ('Baby Stroller S4', 40, 129.99, 'Comfortable and convenient stroller for
 -- Inserting a hiking backpack
 INSERT INTO products (name, stock, price, description)
 VALUES ('Hiking Backpack B9', 20, 79.99, 'Carry your gear comfortably on your outdoor adventures.');
+
+
+
+/* Adding Products */
+
+-- Inserting an order with multiple products
+INSERT INTO orders (customer_first_name, customer_last_name, customer_phone_number, customer_address, customer_email, date_time, phone_number, amount, paymentMethod)
+VALUES ('John', 'Doe', '123-456-7890', '123 Main St', 'john@nsbm.ac.lk', '2023-08-23 10:00:00', '555-123-4567', 549.98, 'Credit Card');
+
+-- Adding products to the order
+INSERT INTO orderproducts (product_id, order_id, quantity)
+VALUES (3, 1, 2), -- Adding 2 units of product with ID 3
+       (8, 1, 1); -- Adding 1 unit of product with ID 8
+
+-- Inserting another order
+INSERT INTO orders (customer_first_name, customer_last_name, customer_phone_number, customer_address, customer_email, date_time, phone_number, amount, paymentMethod)
+VALUES ('Jane', 'Smith', '987-654-3210', '456 Oak Ave', 'jane@nsbm.ac.lk', '2023-08-23 15:30:00', '555-987-6543', 169.99, 'PayPal');
+
+-- Adding products to the second order
+INSERT INTO orderproducts (product_id, order_id, quantity)
+VALUES (5, 2, 1), -- Adding 1 unit of product with ID 5
+       (12, 2, 3); -- Adding 3 units of product with ID 12
+
+-- Inserting a new order
+INSERT INTO orders (customer_first_name, customer_last_name, customer_phone_number, customer_address, customer_email, date_time, phone_number, amount, paymentMethod)
+VALUES ('Alice', 'Johnson', '555-555-5555', '789 Elm St', 'alice@nsbm.ac.lk', '2023-08-24 11:45:00', '555-555-5555', 299.95, 'Credit Card');
+
+-- Adding products to the order
+INSERT INTO orderproducts (product_id, order_id, quantity)
+VALUES (1, 3, 1), -- Adding 1 unit of product with ID 1
+       (7, 3, 2); -- Adding 2 units of product with ID 7
+
+-- Inserting another order
+INSERT INTO orders (customer_first_name, customer_last_name, customer_phone_number, customer_address, customer_email, date_time, phone_number, amount, paymentMethod)
+VALUES ('Michael', 'Brown', '111-222-3333', '234 Maple Rd', 'michael@nsbm.ac.lk', '2023-08-25 14:15:00', '555-444-5555', 114.98, 'Cash');
+
+-- Adding products to the order
+INSERT INTO orderproducts (product_id, order_id, quantity)
+VALUES (9, 4, 1), -- Adding 1 unit of product with ID 9
+       (14, 4, 1); -- Adding 1 unit of product with ID 14
+
+-- Inserting another order
+INSERT INTO orders (customer_first_name, customer_last_name, customer_phone_number, customer_address, customer_email, date_time, phone_number, amount, paymentMethod)
+VALUES ('Emily', 'Williams', '777-888-9999', '567 Pine Ln', 'emily@nsbm.ac.lk', '2023-08-26 09:30:00', '555-666-7777', 419.97, 'Credit Card');
+
+-- Adding products to the order
+INSERT INTO orderproducts (product_id, order_id, quantity)
+VALUES (2, 5, 3), -- Adding 3 units of product with ID 2
+       (10, 5, 1); -- Adding 1 unit of product with ID 10

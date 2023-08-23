@@ -167,11 +167,11 @@
     <Compile Include="Views\AddAccount\AddAccount.Designer.cs">
       <DependentUpon>AddAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\PrintBill\PrintBill.cs">
+    <Compile Include="Views\AddOrder\AddOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\PrintBill\PrintBill.Designer.cs">
-      <DependentUpon>PrintBill.cs</DependentUpon>
+    <Compile Include="Views\AddOrder\AddOrder.Designer.cs">
+      <DependentUpon>AddOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -208,8 +208,8 @@
     <EmbeddedResource Include="Views\AddAccount\AddAccount.resx">
       <DependentUpon>AddAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\PrintBill\PrintBill.resx">
-      <DependentUpon>PrintBill.cs</DependentUpon>
+    <EmbeddedResource Include="Views\AddOrder\AddOrder.resx">
+      <DependentUpon>AddOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -53,9 +53,9 @@ namespace PosSystem
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PrintBill printBillForm = new PrintBill();
-            printBillForm.SetRole("ADMIN");
-            printBillForm.Show();
+            AddOrder addOrderForm = new AddOrder();
+            addOrderForm.SetRole("ADMIN");
+            addOrderForm.Show();
             this.Hide();
         }
 
