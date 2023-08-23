@@ -53,6 +53,34 @@ namespace PosSystem.Classes
             }
         }
 
+        public bool findProductById(int productId)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM products WHERE id=@val1", db.Connection);
+            cmd.Parameters.AddWithValue("@val1", productId.ToString());
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                id = reader.GetInt32(0);
+                name = reader.GetString(1);
+                stock = reader.GetInt32(2);
+                price = reader.GetDouble(3);
+                description = reader.GetString(4);
+            }
+
+            if (reader.HasRows)
+            {
+                reader.Close();
+                return true;
+            }
+            else
+            {
+                reader.Close();
+                return false;
+            }
+        }
+
         public bool createNewProduct(string _name, string _description, int _stock, double _price)
         {
             string query = $"INSERT INTO products(name, description, stock, price) VALUES (@val1, @val2, @val3, @val4);";

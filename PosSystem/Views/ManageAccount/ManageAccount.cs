@@ -36,9 +36,6 @@ namespace PosSystem
             firstnameInput.Text = "";
             lastnameInput.Text = "";
             roleLabel.Text = "";
-            changeRoleBtn.Text = "";
-            deleteBtn.Text = "";
-            updateBtn.Text = "";
         }
 
         private void searchBtn_Click(object sender, EventArgs e)

@@ -35,7 +35,8 @@ namespace PosSystem
 
             billDataGridView.Columns.Add("Name", "Name");
             billDataGridView.Columns.Add("Quantity", "Quantity");
-            billDataGridView.Columns.Add("Price", "Price");
+            billDataGridView.Columns.Add("Price (per each)", "Price (per each)");
+            billDataGridView.Columns.Add("Total Price", "Total Price");
         }
         public void SetRole(string _role)
         {
@@ -76,16 +77,25 @@ namespace PosSystem
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            bool searchResult = product.findProduct(productNameInputBox.Text);
-            if (searchResult)
+            if (productNameInputBox.Text.Length > 0)
             {
-                searchResultsLabel.Text = "Name: " + product.getName() + "\nCurrent Stock: " + product.getStock();
-                AddProductBtn.Enabled = true;
+                bool searchResult = product.findProduct(productNameInputBox.Text);
+                if (searchResult)
+                {
+                    searchResultsLabel.Text = "Name: " + product.getName() + "\nCurrent Stock: " + product.getStock();
+                    AddProductBtn.Enabled = true;
+                }
+                else
+                {
+                    searchResultsLabel.Text = "Not Found";
+                    AddProductBtn.Enabled = false;
+                }
             } else
             {
-                searchResultsLabel.Text = "Not Found";
-                AddProductBtn.Enabled = false;
+                MessageBox.Show("Please enter the search query", "POS");
+                return;
             }
+            
         }
 
         private void AddProductBtn_Click(object sender, EventArgs e)
@@ -102,7 +112,10 @@ namespace PosSystem
             searchResultsLabel.Text = "Not Found";
             AddProductBtn.Enabled = false;
             productNameInputBox.Text = "";
-            quantityNumericUpDown.Value = decimal.Zero;
+            quantityNumericUpDown.Value = decimal.One;
+
+            // Enabling the bill info groupbox
+            billGroupBox.Enabled = true;
 
             updateBill();
         }
@@ -110,6 +123,24 @@ namespace PosSystem
         private void updateBill()
         {
             // Updating the billDataGridView
+            Product tmpProduct = new Product();
+            double totalPrice = 0;
+            billDataGridView.Rows.Clear();
+
+            foreach (KeyValuePair<int, int> product in productQuantity)
+            {
+                int productId = product.Key;
+                int requestedQuantity = product.Value;
+                double priceOfThis = tmpProduct.getPrice() * requestedQuantity;
+
+                tmpProduct.findProductById(productId);
+                billDataGridView.Rows.Add(tmpProduct.getName(), requestedQuantity, tmpProduct.getPrice(), tmpProduct.getPrice() * requestedQuantity);
+
+                totalPrice = totalPrice + priceOfThis;
+
+            }
+
+            totalPriceLabel.Text = totalPrice.ToString();
         }
     }
 }

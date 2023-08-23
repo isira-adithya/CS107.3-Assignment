@@ -55,14 +55,14 @@
             this.totalPriceLabel = new System.Windows.Forms.Label();
             this.printBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.billGroupBox = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.searchResultsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
             this.customerDetailsGroupBox.SuspendLayout();
             this.addProductsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.billDataGridView)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.billGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -218,6 +218,11 @@
             this.quantityNumericUpDown.Name = "quantityNumericUpDown";
             this.quantityNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.quantityNumericUpDown.TabIndex = 20;
+            this.quantityNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // AddProductBtn
             // 
@@ -327,20 +332,20 @@
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // billGroupBox
             // 
-            this.groupBox1.Controls.Add(this.saveBtn);
-            this.groupBox1.Controls.Add(this.printBtn);
-            this.groupBox1.Controls.Add(this.totalPriceLabel);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.billDataGridView);
-            this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(14, 469);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1093, 407);
-            this.groupBox1.TabIndex = 30;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Bill";
+            this.billGroupBox.Controls.Add(this.saveBtn);
+            this.billGroupBox.Controls.Add(this.printBtn);
+            this.billGroupBox.Controls.Add(this.totalPriceLabel);
+            this.billGroupBox.Controls.Add(this.label9);
+            this.billGroupBox.Controls.Add(this.billDataGridView);
+            this.billGroupBox.Enabled = false;
+            this.billGroupBox.Location = new System.Drawing.Point(14, 469);
+            this.billGroupBox.Name = "billGroupBox";
+            this.billGroupBox.Size = new System.Drawing.Size(1093, 407);
+            this.billGroupBox.TabIndex = 30;
+            this.billGroupBox.TabStop = false;
+            this.billGroupBox.Text = "Bill";
             // 
             // label4
             // 
@@ -368,7 +373,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1123, 899);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.billGroupBox);
             this.Controls.Add(this.addProductsGroupBox);
             this.Controls.Add(this.customerDetailsGroupBox);
             this.Controls.Add(this.label1);
@@ -382,8 +387,8 @@
             this.addProductsGroupBox.ResumeLayout(false);
             this.addProductsGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.billDataGridView)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.billGroupBox.ResumeLayout(false);
+            this.billGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,7 +423,7 @@
         private System.Windows.Forms.Button printBtn;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button saveCustomerBtn;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox billGroupBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label searchResultsLabel;
     }
