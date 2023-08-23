@@ -31,5 +31,11 @@ namespace PosSystem.Views.ViewAccount
             accountsDataGrid.DataSource = ds;
             accountsDataGrid.DataMember = "UsersTable";
         }
+
+        private void ViewAccount_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            AdminHome adminHomeForm = new AdminHome();
+            adminHomeForm.Show();
+        }
     }
 }

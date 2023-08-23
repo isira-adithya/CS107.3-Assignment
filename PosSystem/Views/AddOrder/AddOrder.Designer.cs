@@ -228,6 +228,7 @@
             this.AddProductBtn.TabIndex = 21;
             this.AddProductBtn.Text = "Add";
             this.AddProductBtn.UseVisualStyleBackColor = true;
+            this.AddProductBtn.Click += new System.EventHandler(this.AddProductBtn_Click);
             // 
             // customerDetailsGroupBox
             // 

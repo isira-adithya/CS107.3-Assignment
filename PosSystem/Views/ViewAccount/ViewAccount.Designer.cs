@@ -60,9 +60,10 @@
             this.ClientSize = new System.Drawing.Size(816, 480);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.accountsDataGrid);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ViewAccount";
             this.Text = "ViewAccount";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewAccount_FormClosed);
             this.Load += new System.EventHandler(this.ViewAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGrid)).EndInit();
             this.ResumeLayout(false);

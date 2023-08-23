@@ -129,5 +129,11 @@ namespace PosSystem
                 MessageBox.Show("Something went wrong", "POS");
             }
         }
+
+        private void ManageAccount_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            AdminHome adminHomeForm = new AdminHome();
+            adminHomeForm.Show();
+        }
     }
 }

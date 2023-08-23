@@ -25,6 +25,9 @@ namespace PosSystem
         private string customer_email;
         private string customer_address;
 
+        // Order Related
+        private Dictionary<int, int> productQuantity = new Dictionary<int, int>();
+
         public AddOrder()
         {
             InitializeComponent();
@@ -79,6 +82,22 @@ namespace PosSystem
                 searchResultsLabel.Text = "Not Found";
                 AddProductBtn.Enabled = false;
             }
+        }
+
+        private void AddProductBtn_Click(object sender, EventArgs e)
+        {
+            // Checking if there are enough stock available 
+            int stockRequested = int.Parse(quantityNumericUpDown.Value.ToString());
+            if (stockRequested > product.getStock())
+            {
+                MessageBox.Show("Not enough stock available", "POS");
+                return;
+            }
+
+            productQuantity.Add(product.getId(), stockRequested);
+            searchResultsLabel.Text = "Not Found";
+            AddProductBtn.Enabled = false;
+            productNameInputBox.Text = "";
         }
     }
 }

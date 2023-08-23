@@ -132,6 +132,11 @@ namespace PosSystem.Classes
             return this.price;
         }
 
+        public int getId()
+        {
+            return this.id;
+        }
+
         // Setters
         public void setNewDetails(string _name, string _description, int _stock, double _price)
         {
