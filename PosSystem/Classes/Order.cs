@@ -123,7 +123,7 @@ namespace PosSystem.Classes
                 // Deducting the stock
                 query = $"UPDATE products SET stock=((SELECT stock FROM products WHERE id=@pid) - @val1) WHERE id=@pid;";
                 cmd = new SqlCommand(query, db.Connection);
-                cmd.Parameters.AddWithValue("@val1", fname);
+                cmd.Parameters.AddWithValue("@val1", requestedQuantity);
                 cmd.Parameters.AddWithValue("@pid", productId);
                 result = cmd.ExecuteNonQuery();
 

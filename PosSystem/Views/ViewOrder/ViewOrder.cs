@@ -93,9 +93,10 @@ namespace PosSystem.Views.ViewOrder
             {
                 int productId = product.Key;
                 int requestedQuantity = product.Value;
-                double priceOfThis = tmpProduct.getPrice() * requestedQuantity;
-
                 tmpProduct.findProductById(productId);
+
+
+                double priceOfThis = tmpProduct.getPrice() * requestedQuantity;
                 orderDataGrid.Rows.Add(tmpProduct.getName(), requestedQuantity, tmpProduct.getPrice(), priceOfThis);
 
             }

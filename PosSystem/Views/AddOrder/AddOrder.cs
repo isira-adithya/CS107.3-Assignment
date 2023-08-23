@@ -163,9 +163,9 @@ namespace PosSystem
             {
                 int productId = product.Key;
                 int requestedQuantity = product.Value;
-                double priceOfThis = tmpProduct.getPrice() * requestedQuantity;
-
                 tmpProduct.findProductById(productId);
+
+                double priceOfThis = tmpProduct.getPrice() * requestedQuantity;
                 billDataGridView.Rows.Add(tmpProduct.getName(), requestedQuantity, tmpProduct.getPrice(), priceOfThis);
 
                 totalPrice = totalPrice + priceOfThis;
@@ -195,10 +195,31 @@ namespace PosSystem
             if (result)
             {
                 MessageBox.Show("Order has been saved.", "POS");
+
+                // Refreshing the Form
+                refreshForm();
             } else
             {
                 MessageBox.Show("Something went wrong", "POS");
             }
+        }
+
+        private void refreshForm()
+        {
+            clearLabels();
+            totalPriceLabel.Text = "0 LKR";
+            billDataGridView.Rows.Clear();
+
+            // Input Boxes
+            firstnameInputBox.Text = "";
+            lastnameInputBox.Text = "";
+            phoneInputBox.Text = "";
+            emailInputBox.Text = "";
+            addressInputBox.Text = "";
+            customerDetailsGroupBox.Enabled = true;
+            addProductsGroupBox.Enabled = false;
+            billGroupBox.Enabled = false;
+            productNameInputBox.Text = "";
         }
     }
 
