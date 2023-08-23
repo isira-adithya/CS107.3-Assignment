@@ -140,7 +140,7 @@ namespace PosSystem
 
             }
 
-            totalPriceLabel.Text = totalPrice.ToString();
+            totalPriceLabel.Text = totalPrice.ToString() + " LKR";
         }
     }
 }
