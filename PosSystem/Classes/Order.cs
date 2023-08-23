@@ -46,7 +46,7 @@ namespace PosSystem.Classes
                 customer_address = reader.GetString(4);
                 customer_email = reader.GetString(5);
                 datetime = reader.GetDateTime(6).ToString();
-                total_price = reader.GetInt32(7);
+                total_price = reader.GetDouble(7);
                 paymentMethod = reader.GetString(8);
             }
 
@@ -62,9 +62,36 @@ namespace PosSystem.Classes
             }
         }
 
-        public bool createNewOrder(string fname, string lname, string pnumber, string address, string emailaddr, double totalprice, string paymentmethod)
+        public Dictionary<int, int> findOrderProductQuantities(int orderId)
         {
-            string query = $"INSERT INTO orders(customer_first_name, customer_last_name, customer_phone_number, customer_address, customer_email, date_time, total_price, paymentMethod) VALUES (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8);";
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM orderproducts WHERE order_id=@val1", db.Connection);
+            cmd.Parameters.AddWithValue("@val1", orderId.ToString());
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            Dictionary<int, int> result = new Dictionary<int, int>();
+            int productId;
+            int quantity;
+
+            while (reader.Read())
+            {
+
+                productId = reader.GetInt32(0);
+                quantity = reader.GetInt32(2);
+                result.Add(productId, quantity);
+            }
+
+            reader.Close();
+
+            // Returning an empty dictionary
+            return result;
+        }
+
+        public bool createNewOrder(string fname, string lname, string pnumber, string address, string emailaddr, double totalprice, string paymentmethod, Dictionary<int, int> productQuantity)
+        {
+            int result = 0;
+            string query = $"INSERT INTO orders(customer_first_name, customer_last_name, customer_phone_number, customer_address, customer_email, date_time, total_price, paymentMethod) OUTPUT INSERTED.ID VALUES (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8);";
             SqlCommand cmd = new SqlCommand(query, db.Connection);
             cmd.Parameters.AddWithValue("@val1", fname);
             cmd.Parameters.AddWithValue("@val2", lname);
@@ -74,16 +101,39 @@ namespace PosSystem.Classes
             cmd.Parameters.AddWithValue("@val6", DateTime.Now.ToString());
             cmd.Parameters.AddWithValue("@val7", totalprice);
             cmd.Parameters.AddWithValue("@val8", paymentmethod);
-            int result = cmd.ExecuteNonQuery();
+            int currentSqlRecordId = (int)cmd.ExecuteScalar();
 
-            if (result == 1)
+            foreach (KeyValuePair<int, int> product in productQuantity)
             {
-                return true;
+                int productId = product.Key;
+                int requestedQuantity = product.Value;
+
+                query = "INSERT INTO orderproducts(product_id, order_id, quantity) VALUES (@val1, @val2, @val3);";
+                cmd = new SqlCommand(query, db.Connection);
+                cmd.Parameters.AddWithValue("@val1", productId);
+                cmd.Parameters.AddWithValue("@val2", currentSqlRecordId);
+                cmd.Parameters.AddWithValue("@val3", requestedQuantity);
+                result = cmd.ExecuteNonQuery();
+
+                if (result != 1)
+                {
+                    return false;
+                }
+
+                // Deducting the stock
+                query = $"UPDATE products SET stock=((SELECT stock FROM products WHERE id=@pid) - @val1) WHERE id=@pid;";
+                cmd = new SqlCommand(query, db.Connection);
+                cmd.Parameters.AddWithValue("@val1", fname);
+                cmd.Parameters.AddWithValue("@pid", productId);
+                result = cmd.ExecuteNonQuery();
+
+                if (result != 1)
+                {
+                    return false;
+                }
             }
-            else
-            {
-                return false;
-            }
+
+            return true;
         }
 
         public bool deleteProduct()
@@ -102,7 +152,49 @@ namespace PosSystem.Classes
                 return false;
             }
         }
-        
+
+        // Getters
+
+        public int getId()
+        {
+            return id;
+        }
+        public string getCustomerName()
+        {
+            return customer_first_name + " " +  customer_last_name;
+        }
+
+        public string getCustomerPhone()
+        {
+            return customer_phone_number;
+        }
+
+        public string getCustomerEmail()
+        {
+            return customer_email;
+        }
+
+        public string getCustomerAddress()
+        {
+            return customer_address;
+        }
+
+        public string getPaymentMethod()
+        {
+            return paymentMethod;
+        }
+
+        public double getTotalPrice()
+        {
+            return total_price;
+        }
+
+        public string getDateTime()
+        {
+            return datetime;
+        }
+
+
 
     }
 }

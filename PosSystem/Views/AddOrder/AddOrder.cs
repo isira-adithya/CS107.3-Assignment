@@ -45,6 +45,7 @@ namespace PosSystem
             paymentMethods.Add(new PaymentMethod() { Text = "PayPal", Value = "paypal" });
             paymentMethods.Add(new PaymentMethod() { Text = "Credit/Debit Card", Value = "card" });
             paymentMethods.Add(new PaymentMethod() { Text = "Cash", Value = "cash" });
+            paymentMethods.Add(new PaymentMethod() { Text = "Other", Value = "other" });
 
             paymentMethodSelectionComboBox.DataSource = paymentMethods;
             paymentMethodSelectionComboBox.DisplayMember = "Text";
@@ -165,7 +166,7 @@ namespace PosSystem
                 double priceOfThis = tmpProduct.getPrice() * requestedQuantity;
 
                 tmpProduct.findProductById(productId);
-                billDataGridView.Rows.Add(tmpProduct.getName(), requestedQuantity, tmpProduct.getPrice(), tmpProduct.getPrice() * requestedQuantity);
+                billDataGridView.Rows.Add(tmpProduct.getName(), requestedQuantity, tmpProduct.getPrice(), priceOfThis);
 
                 totalPrice = totalPrice + priceOfThis;
 
@@ -176,7 +177,28 @@ namespace PosSystem
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            Order order = new Order();
+            Product tmpProduct = new Product();
+            double totalPrice = 0;
 
+            foreach (KeyValuePair<int, int> product in productQuantity)
+            {
+                int productId = product.Key;
+                int requestedQuantity = product.Value;
+                double priceOfThis = tmpProduct.getPrice() * requestedQuantity;
+                tmpProduct.findProductById(productId);
+                totalPrice = totalPrice + priceOfThis;
+
+            }
+
+            bool result = order.createNewOrder(customer_first_name, customer_last_name, customer_phone, customer_address, customer_email, totalPrice, paymentMethodSelectionComboBox.Text, productQuantity);
+            if (result)
+            {
+                MessageBox.Show("Order has been saved.", "POS");
+            } else
+            {
+                MessageBox.Show("Something went wrong", "POS");
+            }
         }
     }
 

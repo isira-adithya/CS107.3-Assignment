@@ -1,4 +1,5 @@
 ﻿using PosSystem.Views.ViewAccount;
+using PosSystem.Views.ViewOrder;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,6 +76,13 @@ namespace PosSystem
         {
             ViewAccount viewAccountForm = new ViewAccount();
             viewAccountForm.Show();
+            this.Hide();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            ViewOrder viewOrderForm = new ViewOrder();
+            viewOrderForm.Show();
             this.Hide();
         }
     }
