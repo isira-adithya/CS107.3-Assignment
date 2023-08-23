@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.topic_delete = new System.Windows.Forms.Label();
-            this.AddProCancel = new System.Windows.Forms.Button();
-            this.UpdateDetailsButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.productName = new System.Windows.Forms.TextBox();
             this.productQuantity = new System.Windows.Forms.NumericUpDown();
@@ -60,31 +60,31 @@
             this.topic_delete.TabIndex = 0;
             this.topic_delete.Text = "Edit Product";
             // 
-            // AddProCancel
+            // cancelButton
             // 
-            this.AddProCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.AddProCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddProCancel.Location = new System.Drawing.Point(407, 410);
-            this.AddProCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.AddProCancel.Name = "AddProCancel";
-            this.AddProCancel.Size = new System.Drawing.Size(100, 38);
-            this.AddProCancel.TabIndex = 21;
-            this.AddProCancel.Text = "Cancel";
-            this.AddProCancel.UseVisualStyleBackColor = true;
-            this.AddProCancel.Click += new System.EventHandler(this.AddProCancel_Click);
+            this.cancelButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.Location = new System.Drawing.Point(407, 410);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(100, 38);
+            this.cancelButton.TabIndex = 21;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.AddProCancel_Click);
             // 
-            // UpdateDetailsButton
+            // updateButton
             // 
-            this.UpdateDetailsButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.UpdateDetailsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateDetailsButton.Location = new System.Drawing.Point(21, 410);
-            this.UpdateDetailsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.UpdateDetailsButton.Name = "UpdateDetailsButton";
-            this.UpdateDetailsButton.Size = new System.Drawing.Size(100, 38);
-            this.UpdateDetailsButton.TabIndex = 20;
-            this.UpdateDetailsButton.Text = "Update";
-            this.UpdateDetailsButton.UseVisualStyleBackColor = true;
-            this.UpdateDetailsButton.Click += new System.EventHandler(this.UpdateDetailsButton_Click);
+            this.updateButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateButton.Location = new System.Drawing.Point(21, 410);
+            this.updateButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(100, 38);
+            this.updateButton.TabIndex = 20;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.UpdateDetailsButton_Click);
             // 
             // label3
             // 
@@ -195,8 +195,8 @@
             this.Editprod_groupbox.Controls.Add(this.label4);
             this.Editprod_groupbox.Controls.Add(this.label5);
             this.Editprod_groupbox.Controls.Add(this.label6);
-            this.Editprod_groupbox.Controls.Add(this.UpdateDetailsButton);
-            this.Editprod_groupbox.Controls.Add(this.AddProCancel);
+            this.Editprod_groupbox.Controls.Add(this.updateButton);
+            this.Editprod_groupbox.Controls.Add(this.cancelButton);
             this.Editprod_groupbox.Location = new System.Drawing.Point(0, 251);
             this.Editprod_groupbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Editprod_groupbox.Name = "Editprod_groupbox";
@@ -273,8 +273,8 @@
         #endregion
 
         private System.Windows.Forms.Label topic_delete;
-        private System.Windows.Forms.Button AddProCancel;
-        private System.Windows.Forms.Button UpdateDetailsButton;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox productName;
         private System.Windows.Forms.NumericUpDown productQuantity;
