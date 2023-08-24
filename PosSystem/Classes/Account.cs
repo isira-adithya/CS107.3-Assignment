@@ -133,6 +133,12 @@ namespace PosSystem.Classes
 
         public bool deleteAccount()
         {
+            // Default account 'admin' should not be deleted from the application
+            if (this.username == "admin")
+            {
+                return false;
+            }
+
             string query = $"DELETE FROM users WHERE username=@val1;";
             SqlCommand cmd = new SqlCommand(query, db.Connection);
             cmd.Parameters.AddWithValue("@val1", username);
