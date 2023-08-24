@@ -228,13 +228,24 @@ namespace PosSystem
         // Following 2 functions were taken from https://www.aspsnippets.com/Articles/Print-contents-of-Form-in-Windows-Forms-WinForms-Application-using-C-and-VBNet.aspx
         private void printBtn_Click(object sender, EventArgs e)
         {
+            Panel panel = new Panel();            
+            this.Controls.Add(panel);
+            panel.Width = panel.MaximumSize.Width;
+            panel.Height = panel.MaximumSize.Height;
+            Point point = PointToScreen(panel.Location);
+
+            // Hiding unwanted content
+            customerDetailsGroupBox.Visible = false;
+            addProductsGroupBox.Visible = false;
+
             Graphics myGraphics = this.CreateGraphics();
             Size s = this.Size;
             ssbitmap = new Bitmap(s.Width, s.Height, myGraphics);
             Graphics memoryGraphics = Graphics.FromImage(ssbitmap);
-            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
+            memoryGraphics.CopyFromScreen(point.X, point.Y, 0, 0, s);
 
             //Show the Print Preview Dialog.
+            printDocument1.DefaultPageSettings.Landscape = true;
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.PrintPreviewControl.Zoom = 1;
             printPreviewDialog1.ShowDialog();

@@ -527,7 +527,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1123, 899);
             this.Controls.Add(this.billGroupBox);
             this.Controls.Add(this.addProductsGroupBox);
@@ -535,7 +535,6 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddOrder";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Add Order";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.goBackToPreviousForm);
             ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).EndInit();
