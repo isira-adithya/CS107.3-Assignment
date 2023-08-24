@@ -21,7 +21,7 @@ namespace PosSystem
 
         private void lockFields(bool state)
         {
-            usernameInput.Enabled = state;
+            emailInput.Enabled = state;
             firstnameInput.Enabled = state;
             lastnameInput.Enabled = state;
             changeRoleBtn.Enabled = state;

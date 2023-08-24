@@ -66,7 +66,7 @@
             // searchQueryInput
             // 
             this.searchQueryInput.Location = new System.Drawing.Point(23, 73);
-            this.searchQueryInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchQueryInput.Margin = new System.Windows.Forms.Padding(4);
             this.searchQueryInput.Name = "searchQueryInput";
             this.searchQueryInput.Size = new System.Drawing.Size(343, 22);
             this.searchQueryInput.TabIndex = 1;
@@ -74,7 +74,7 @@
             // searchBtn
             // 
             this.searchBtn.Location = new System.Drawing.Point(23, 105);
-            this.searchBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchBtn.Margin = new System.Windows.Forms.Padding(4);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(100, 28);
             this.searchBtn.TabIndex = 2;
@@ -136,16 +136,15 @@
             // 
             this.usernameInput.Enabled = false;
             this.usernameInput.Location = new System.Drawing.Point(137, 155);
-            this.usernameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usernameInput.Margin = new System.Windows.Forms.Padding(4);
             this.usernameInput.Name = "usernameInput";
             this.usernameInput.Size = new System.Drawing.Size(228, 22);
             this.usernameInput.TabIndex = 8;
             // 
             // emailInput
             // 
-            this.emailInput.Enabled = false;
             this.emailInput.Location = new System.Drawing.Point(137, 187);
-            this.emailInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailInput.Margin = new System.Windows.Forms.Padding(4);
             this.emailInput.Name = "emailInput";
             this.emailInput.Size = new System.Drawing.Size(228, 22);
             this.emailInput.TabIndex = 9;
@@ -154,7 +153,7 @@
             // 
             this.firstnameInput.Enabled = false;
             this.firstnameInput.Location = new System.Drawing.Point(137, 225);
-            this.firstnameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.firstnameInput.Margin = new System.Windows.Forms.Padding(4);
             this.firstnameInput.Name = "firstnameInput";
             this.firstnameInput.Size = new System.Drawing.Size(228, 22);
             this.firstnameInput.TabIndex = 10;
@@ -163,7 +162,7 @@
             // 
             this.lastnameInput.Enabled = false;
             this.lastnameInput.Location = new System.Drawing.Point(137, 262);
-            this.lastnameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lastnameInput.Margin = new System.Windows.Forms.Padding(4);
             this.lastnameInput.Name = "lastnameInput";
             this.lastnameInput.Size = new System.Drawing.Size(228, 22);
             this.lastnameInput.TabIndex = 11;
@@ -182,7 +181,7 @@
             // 
             this.updateBtn.Enabled = false;
             this.updateBtn.Location = new System.Drawing.Point(16, 364);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.updateBtn.Margin = new System.Windows.Forms.Padding(4);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(100, 28);
             this.updateBtn.TabIndex = 13;
@@ -194,7 +193,7 @@
             // 
             this.changeRoleBtn.Enabled = false;
             this.changeRoleBtn.Location = new System.Drawing.Point(135, 364);
-            this.changeRoleBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.changeRoleBtn.Margin = new System.Windows.Forms.Padding(4);
             this.changeRoleBtn.Name = "changeRoleBtn";
             this.changeRoleBtn.Size = new System.Drawing.Size(128, 28);
             this.changeRoleBtn.TabIndex = 14;
@@ -206,7 +205,7 @@
             // 
             this.deleteBtn.Enabled = false;
             this.deleteBtn.Location = new System.Drawing.Point(280, 364);
-            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(100, 28);
             this.deleteBtn.TabIndex = 15;
@@ -248,23 +247,25 @@
             // newPasswordInput
             // 
             this.newPasswordInput.Location = new System.Drawing.Point(196, 476);
-            this.newPasswordInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.newPasswordInput.Margin = new System.Windows.Forms.Padding(4);
             this.newPasswordInput.Name = "newPasswordInput";
             this.newPasswordInput.Size = new System.Drawing.Size(183, 22);
             this.newPasswordInput.TabIndex = 19;
+            this.newPasswordInput.UseSystemPasswordChar = true;
             // 
             // repeatPasswordInput
             // 
             this.repeatPasswordInput.Location = new System.Drawing.Point(196, 511);
-            this.repeatPasswordInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.repeatPasswordInput.Margin = new System.Windows.Forms.Padding(4);
             this.repeatPasswordInput.Name = "repeatPasswordInput";
             this.repeatPasswordInput.Size = new System.Drawing.Size(183, 22);
             this.repeatPasswordInput.TabIndex = 20;
+            this.repeatPasswordInput.UseSystemPasswordChar = true;
             // 
             // changePasswordBtn
             // 
             this.changePasswordBtn.Location = new System.Drawing.Point(225, 551);
-            this.changePasswordBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.changePasswordBtn.Margin = new System.Windows.Forms.Padding(4);
             this.changePasswordBtn.Name = "changePasswordBtn";
             this.changePasswordBtn.Size = new System.Drawing.Size(155, 28);
             this.changePasswordBtn.TabIndex = 21;
@@ -299,7 +300,7 @@
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.searchQueryInput);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageAccount";
             this.Text = "Manage Accounts";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManageAccount_FormClosed);
