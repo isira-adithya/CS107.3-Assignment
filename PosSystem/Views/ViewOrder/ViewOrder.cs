@@ -62,10 +62,13 @@ namespace PosSystem.Views.ViewOrder
 
             if (!result)
             {
+                MessageBox.Show("Invalid Order ID", "POS");
                 clearUserInputs();
                 return;
             }
 
+
+            // Rendering the specific order details such as Customer Name, Email, Address, Phone, Time/Date, Payment Method
             cnameLabel.Text = order.getCustomerName();
             cEmailLabel.Text = order.getCustomerEmail();
             cAddressLabel.Text = order.getCustomerAddress();
@@ -74,29 +77,36 @@ namespace PosSystem.Views.ViewOrder
             paymentMethodLabel.Text = order.getPaymentMethod();
             dateTimeLabel.Text = order.getDateTime();
 
-            // Rendering the product quantities
+            // Removing any existing data inside the orderDataGrid
             orderDataGrid.Columns.Clear();
             orderDataGrid.Rows.Clear();
 
+
+            // Adding columns
             orderDataGrid.Columns.Add("product_name", "Name");
             orderDataGrid.Columns.Add("product_quantity", "Quantity");
             orderDataGrid.Columns.Add("product_price", "Price (for each)");
             orderDataGrid.Columns.Add("product_total_price", "Total Price");
 
+            // Making it visible
             orderDataGrid.Visible = true;
 
             // Getting info
             Dictionary<int, int> productQuantity = order.findOrderProductQuantities(order.getId());
             Product tmpProduct = new Product();
 
+            // Using the foreach loop, program is iterating over all the elements inside the productQuantity dictionary
             foreach (KeyValuePair<int, int> product in productQuantity)
             {
+                // Getting the product details and the quantity
                 int productId = product.Key;
                 int requestedQuantity = product.Value;
                 tmpProduct.findProductById(productId);
 
-
+                // Calculating the total price for each product in the order
                 double priceOfThis = tmpProduct.getPrice() * requestedQuantity;
+
+                // Adding a new row to the datagrid with the product details
                 orderDataGrid.Rows.Add(tmpProduct.getName(), requestedQuantity, tmpProduct.getPrice(), priceOfThis);
 
             }

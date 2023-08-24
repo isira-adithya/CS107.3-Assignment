@@ -50,8 +50,10 @@
             this.cAddressLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.orderDataGrid = new System.Windows.Forms.DataGridView();
+            this.orderDetailsGroupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderDataGrid)).BeginInit();
+            this.orderDetailsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -113,7 +115,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 591);
+            this.label4.Location = new System.Drawing.Point(1, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 16);
             this.label4.TabIndex = 6;
@@ -122,7 +124,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(418, 591);
+            this.label5.Location = new System.Drawing.Point(387, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 16);
             this.label5.TabIndex = 7;
@@ -131,7 +133,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(418, 628);
+            this.label6.Location = new System.Drawing.Point(387, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(131, 16);
             this.label6.TabIndex = 8;
@@ -140,7 +142,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 628);
+            this.label7.Location = new System.Drawing.Point(2, 63);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 16);
             this.label7.TabIndex = 9;
@@ -149,7 +151,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(33, 663);
+            this.label8.Location = new System.Drawing.Point(2, 98);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 16);
             this.label8.TabIndex = 10;
@@ -158,7 +160,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(32, 696);
+            this.label9.Location = new System.Drawing.Point(1, 131);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 16);
             this.label9.TabIndex = 11;
@@ -167,7 +169,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(33, 728);
+            this.label10.Location = new System.Drawing.Point(2, 163);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(111, 16);
             this.label10.TabIndex = 12;
@@ -177,7 +179,7 @@
             // 
             this.cnameLabel.AutoSize = true;
             this.cnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cnameLabel.Location = new System.Drawing.Point(178, 591);
+            this.cnameLabel.Location = new System.Drawing.Point(147, 26);
             this.cnameLabel.Name = "cnameLabel";
             this.cnameLabel.Size = new System.Drawing.Size(38, 16);
             this.cnameLabel.TabIndex = 13;
@@ -187,7 +189,7 @@
             // 
             this.cEmailLabel.AutoSize = true;
             this.cEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cEmailLabel.Location = new System.Drawing.Point(178, 628);
+            this.cEmailLabel.Location = new System.Drawing.Point(147, 63);
             this.cEmailLabel.Name = "cEmailLabel";
             this.cEmailLabel.Size = new System.Drawing.Size(38, 16);
             this.cEmailLabel.TabIndex = 14;
@@ -197,7 +199,7 @@
             // 
             this.dateTimeLabel.AutoSize = true;
             this.dateTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeLabel.Location = new System.Drawing.Point(178, 663);
+            this.dateTimeLabel.Location = new System.Drawing.Point(147, 98);
             this.dateTimeLabel.Name = "dateTimeLabel";
             this.dateTimeLabel.Size = new System.Drawing.Size(38, 16);
             this.dateTimeLabel.TabIndex = 15;
@@ -207,7 +209,7 @@
             // 
             this.totalPriceLabel.AutoSize = true;
             this.totalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPriceLabel.Location = new System.Drawing.Point(178, 696);
+            this.totalPriceLabel.Location = new System.Drawing.Point(147, 131);
             this.totalPriceLabel.Name = "totalPriceLabel";
             this.totalPriceLabel.Size = new System.Drawing.Size(38, 16);
             this.totalPriceLabel.TabIndex = 16;
@@ -217,7 +219,7 @@
             // 
             this.paymentMethodLabel.AutoSize = true;
             this.paymentMethodLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paymentMethodLabel.Location = new System.Drawing.Point(178, 728);
+            this.paymentMethodLabel.Location = new System.Drawing.Point(147, 163);
             this.paymentMethodLabel.Name = "paymentMethodLabel";
             this.paymentMethodLabel.Size = new System.Drawing.Size(38, 16);
             this.paymentMethodLabel.TabIndex = 17;
@@ -227,7 +229,7 @@
             // 
             this.cPhoneLabel.AutoSize = true;
             this.cPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cPhoneLabel.Location = new System.Drawing.Point(564, 591);
+            this.cPhoneLabel.Location = new System.Drawing.Point(533, 26);
             this.cPhoneLabel.Name = "cPhoneLabel";
             this.cPhoneLabel.Size = new System.Drawing.Size(38, 16);
             this.cPhoneLabel.TabIndex = 18;
@@ -237,7 +239,7 @@
             // 
             this.cAddressLabel.AutoSize = true;
             this.cAddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cAddressLabel.Location = new System.Drawing.Point(564, 628);
+            this.cAddressLabel.Location = new System.Drawing.Point(533, 63);
             this.cAddressLabel.Name = "cAddressLabel";
             this.cAddressLabel.Size = new System.Drawing.Size(38, 16);
             this.cAddressLabel.TabIndex = 19;
@@ -262,6 +264,29 @@
             this.orderDataGrid.TabIndex = 21;
             this.orderDataGrid.Visible = false;
             // 
+            // orderDetailsGroupBox
+            // 
+            this.orderDetailsGroupBox.Controls.Add(this.cAddressLabel);
+            this.orderDetailsGroupBox.Controls.Add(this.cPhoneLabel);
+            this.orderDetailsGroupBox.Controls.Add(this.paymentMethodLabel);
+            this.orderDetailsGroupBox.Controls.Add(this.totalPriceLabel);
+            this.orderDetailsGroupBox.Controls.Add(this.dateTimeLabel);
+            this.orderDetailsGroupBox.Controls.Add(this.cEmailLabel);
+            this.orderDetailsGroupBox.Controls.Add(this.cnameLabel);
+            this.orderDetailsGroupBox.Controls.Add(this.label10);
+            this.orderDetailsGroupBox.Controls.Add(this.label9);
+            this.orderDetailsGroupBox.Controls.Add(this.label8);
+            this.orderDetailsGroupBox.Controls.Add(this.label7);
+            this.orderDetailsGroupBox.Controls.Add(this.label6);
+            this.orderDetailsGroupBox.Controls.Add(this.label5);
+            this.orderDetailsGroupBox.Controls.Add(this.label4);
+            this.orderDetailsGroupBox.Location = new System.Drawing.Point(31, 565);
+            this.orderDetailsGroupBox.Name = "orderDetailsGroupBox";
+            this.orderDetailsGroupBox.Size = new System.Drawing.Size(828, 188);
+            this.orderDetailsGroupBox.TabIndex = 22;
+            this.orderDetailsGroupBox.TabStop = false;
+            this.orderDetailsGroupBox.Text = "Order Details";
+            // 
             // ViewOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -269,22 +294,9 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(895, 993);
+            this.Controls.Add(this.orderDetailsGroupBox);
             this.Controls.Add(this.orderDataGrid);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.cAddressLabel);
-            this.Controls.Add(this.cPhoneLabel);
-            this.Controls.Add(this.paymentMethodLabel);
-            this.Controls.Add(this.totalPriceLabel);
-            this.Controls.Add(this.dateTimeLabel);
-            this.Controls.Add(this.cEmailLabel);
-            this.Controls.Add(this.cnameLabel);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.searchQueryTextBox);
             this.Controls.Add(this.label2);
@@ -298,6 +310,8 @@
             this.Load += new System.EventHandler(this.ViewOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderDataGrid)).EndInit();
+            this.orderDetailsGroupBox.ResumeLayout(false);
+            this.orderDetailsGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +341,6 @@
         private System.Windows.Forms.Label cAddressLabel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView orderDataGrid;
+        private System.Windows.Forms.GroupBox orderDetailsGroupBox;
     }
 }
