@@ -133,24 +133,9 @@ namespace PosSystem.Classes
                 }
             }
 
+            this.findOrderById(currentSqlRecordId);
+
             return true;
-        }
-
-        public bool deleteProduct()
-        {
-            string query = $"DELETE FROM orders WHERE id=@val1;";
-            SqlCommand cmd = new SqlCommand(query, db.Connection);
-            cmd.Parameters.AddWithValue("@val1", id);
-            int result = cmd.ExecuteNonQuery();
-
-            if (result == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
 
         // Getters

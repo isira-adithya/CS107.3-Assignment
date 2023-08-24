@@ -73,6 +73,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.clearButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
             this.customerDetailsGroupBox.SuspendLayout();
             this.addProductsGroupBox.SuspendLayout();
@@ -351,7 +352,8 @@
             // 
             // printBtn
             // 
-            this.printBtn.Location = new System.Drawing.Point(980, 350);
+            this.printBtn.Enabled = false;
+            this.printBtn.Location = new System.Drawing.Point(886, 356);
             this.printBtn.Name = "printBtn";
             this.printBtn.Size = new System.Drawing.Size(75, 23);
             this.printBtn.TabIndex = 28;
@@ -361,7 +363,7 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(872, 350);
+            this.saveBtn.Location = new System.Drawing.Point(778, 356);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 29;
@@ -371,6 +373,7 @@
             // 
             // billGroupBox
             // 
+            this.billGroupBox.Controls.Add(this.clearButton);
             this.billGroupBox.Controls.Add(this.addressLabel);
             this.billGroupBox.Controls.Add(this.phoneLabel);
             this.billGroupBox.Controls.Add(this.emailLabel);
@@ -523,6 +526,17 @@
             this.printDocument1.DocumentName = "s";
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
+            // clearButton
+            // 
+            this.clearButton.Enabled = false;
+            this.clearButton.Location = new System.Drawing.Point(986, 356);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 42;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
             // AddOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -596,5 +610,6 @@
         private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Button clearButton;
     }
 }

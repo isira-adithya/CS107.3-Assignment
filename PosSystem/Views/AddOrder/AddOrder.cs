@@ -30,6 +30,7 @@ namespace PosSystem
 
         // Order Related
         private Dictionary<int, int> productQuantity = new Dictionary<int, int>();
+        Order order = new Order();
 
         public AddOrder()
         {
@@ -178,8 +179,7 @@ namespace PosSystem
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
-        {
-            Order order = new Order();
+        {   
             Product tmpProduct = new Product();
             double totalPrice = 0;
 
@@ -197,9 +197,7 @@ namespace PosSystem
             if (result)
             {
                 MessageBox.Show("Order has been saved.", "POS");
-
-                // Refreshing the Form
-                refreshForm();
+                printBtn.Enabled = true;
             } else
             {
                 MessageBox.Show("Something went wrong", "POS");
@@ -222,13 +220,14 @@ namespace PosSystem
             addProductsGroupBox.Enabled = false;
             billGroupBox.Enabled = false;
             productNameInputBox.Text = "";
+            printBtn.Enabled = false;
         }
 
 
         // Following 2 functions were taken from https://www.aspsnippets.com/Articles/Print-contents-of-Form-in-Windows-Forms-WinForms-Application-using-C-and-VBNet.aspx
         private void printBtn_Click(object sender, EventArgs e)
         {
-            Panel panel = new Panel();            
+            /* Panel panel = new Panel();            
             this.Controls.Add(panel);
             panel.Width = panel.MaximumSize.Width;
             panel.Height = panel.MaximumSize.Height;
@@ -243,8 +242,9 @@ namespace PosSystem
             ssbitmap = new Bitmap(s.Width, s.Height, myGraphics);
             Graphics memoryGraphics = Graphics.FromImage(ssbitmap);
             memoryGraphics.CopyFromScreen(point.X, point.Y, 0, 0, s);
+            */
 
-            //Show the Print Preview Dialog.
+            //Show the Print Preview Dialog
             printDocument1.DefaultPageSettings.Landscape = true;
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.PrintPreviewControl.Zoom = 1;
@@ -253,8 +253,63 @@ namespace PosSystem
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            //Print the contents.
-            e.Graphics.DrawImage(ssbitmap, 0, 0);
+            Graphics graphics = e.Graphics;
+            Font font = new Font("Courier New", 10);
+            float fontHeight = font.GetHeight();
+            int startX = 50;
+            int startY = 55;
+            int Offset = 40;
+
+            graphics.DrawString("Welcome to Adithya Stores", new Font("Courier New", 14),
+                                new SolidBrush(Color.Black), startX, startY + Offset);
+            Offset = Offset + 50;
+
+            graphics.DrawString("Date/Time: " + order.getDateTime(),
+                     font,
+                     new SolidBrush(Color.Black), startX, startY + Offset);
+            Offset = Offset + 20;
+
+            graphics.DrawString("Customer Name: " + order.getCustomerName(),
+                     font,
+                     new SolidBrush(Color.Black), startX, startY + Offset);
+            Offset = Offset + 20;
+
+            String underLine = "--------------- Products ---------------";
+            graphics.DrawString(underLine, font,
+                     new SolidBrush(Color.Black), startX, startY + Offset);
+            Offset = Offset + 30;
+
+            // Rendering products with their quantities
+            Product tmpProduct = new Product();
+
+            foreach (KeyValuePair<int, int> product in productQuantity)
+            {
+                int productId = product.Key;
+                int requestedQuantity = product.Value;
+                tmpProduct.findProductById(productId);
+
+                graphics.DrawString(tmpProduct.getName() +  " * " + requestedQuantity + " = " + tmpProduct.getPrice() * requestedQuantity,
+                     font,
+                     new SolidBrush(Color.Black), startX, startY + Offset);
+                Offset = Offset + 20;
+
+            }
+
+            Offset = Offset + 10;
+
+            underLine = "----------------------------------------";
+            graphics.DrawString(underLine, font,
+                     new SolidBrush(Color.Black), startX, startY + Offset);
+            Offset = Offset + 20;
+
+            String Grosstotal = "Total Amount to Pay = " + order.getTotalPrice() + " LKR";
+            graphics.DrawString(Grosstotal, font,
+                     new SolidBrush(Color.Black), startX, startY + Offset);
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            refreshForm();
         }
     }
 
