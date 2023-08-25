@@ -10,6 +10,7 @@ namespace PosSystem.Classes
 {
     internal class Order
     {
+        // Properties
         private int id;
         private string customer_first_name;
         private string customer_last_name;
@@ -21,6 +22,7 @@ namespace PosSystem.Classes
         private string paymentMethod;
 
 
+        // DB
         private Database db;
 
         public Order()
@@ -29,6 +31,7 @@ namespace PosSystem.Classes
             db.Connect();
         }
 
+        // Finding an order using the OrderID
         public bool findOrderById(int orderId)
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM orders WHERE id=@val1", db.Connection);
@@ -38,7 +41,7 @@ namespace PosSystem.Classes
 
             while (reader.Read())
             {
-
+                // Assigns the values to the class variables
                 id = reader.GetInt32(0);
                 customer_first_name = reader.GetString(1);
                 customer_last_name = reader.GetString(2);
@@ -62,6 +65,7 @@ namespace PosSystem.Classes
             }
         }
 
+        // Gets the product Ids and quantities of a specific order from orderproducts
         public Dictionary<int, int> findOrderProductQuantities(int orderId)
         {
 
@@ -70,6 +74,7 @@ namespace PosSystem.Classes
 
             SqlDataReader reader = cmd.ExecuteReader();
 
+            // Creates a new dictionary with both key and value as Integer variables (pid, quantity)
             Dictionary<int, int> result = new Dictionary<int, int>();
             int productId;
             int quantity;
@@ -98,7 +103,7 @@ namespace PosSystem.Classes
             cmd.Parameters.AddWithValue("@val3", pnumber);
             cmd.Parameters.AddWithValue("@val4", address);
             cmd.Parameters.AddWithValue("@val5", emailaddr);
-            cmd.Parameters.AddWithValue("@val6", DateTime.Now.ToString());
+            cmd.Parameters.AddWithValue("@val6", DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
             cmd.Parameters.AddWithValue("@val7", totalprice);
             cmd.Parameters.AddWithValue("@val8", paymentmethod);
             int currentSqlRecordId = (int)cmd.ExecuteScalar();

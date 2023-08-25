@@ -17,7 +17,6 @@ namespace PosSystem
     {
         private string role;
         private Product product;
-        private Bitmap ssbitmap;
 
         // Variables
 
@@ -103,6 +102,7 @@ namespace PosSystem
                 emailLabel.Text = customer_email;
                 phoneLabel.Text = customer_phone;
                 addressLabel.Text = customer_address;
+                clearButton.Enabled = true;
             } else
             {
                 MessageBox.Show("Customer's First name and Last name is required");
@@ -221,29 +221,13 @@ namespace PosSystem
             billGroupBox.Enabled = false;
             productNameInputBox.Text = "";
             printBtn.Enabled = false;
+            clearButton.Enabled = false;
         }
 
 
         // Following 2 functions were taken from https://www.aspsnippets.com/Articles/Print-contents-of-Form-in-Windows-Forms-WinForms-Application-using-C-and-VBNet.aspx
         private void printBtn_Click(object sender, EventArgs e)
         {
-            /* Panel panel = new Panel();            
-            this.Controls.Add(panel);
-            panel.Width = panel.MaximumSize.Width;
-            panel.Height = panel.MaximumSize.Height;
-            Point point = PointToScreen(panel.Location);
-
-            // Hiding unwanted content
-            customerDetailsGroupBox.Visible = false;
-            addProductsGroupBox.Visible = false;
-
-            Graphics myGraphics = this.CreateGraphics();
-            Size s = this.Size;
-            ssbitmap = new Bitmap(s.Width, s.Height, myGraphics);
-            Graphics memoryGraphics = Graphics.FromImage(ssbitmap);
-            memoryGraphics.CopyFromScreen(point.X, point.Y, 0, 0, s);
-            */
-
             //Show the Print Preview Dialog
             printDocument1.DefaultPageSettings.Landscape = true;
             printPreviewDialog1.Document = printDocument1;
