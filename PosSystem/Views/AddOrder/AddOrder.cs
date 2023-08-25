@@ -24,6 +24,7 @@ namespace PosSystem
         // Order Related
         private Dictionary<int, int> productQuantity = new Dictionary<int, int>();
         Order order = new Order();
+        double totalPrice;
 
         public AddOrder()
         {
@@ -153,7 +154,7 @@ namespace PosSystem
         {
             // Updating the billDataGridView
             Product tmpProduct = new Product();
-            double totalPrice = 0;
+            totalPrice = 0;
             billDataGridView.Rows.Clear();
 
             foreach (KeyValuePair<int, int> product in productQuantity)
@@ -174,18 +175,6 @@ namespace PosSystem
 
         private void saveBtn_Click(object sender, EventArgs e)
         {   
-            Product tmpProduct = new Product();
-            double totalPrice = 0;
-
-            foreach (KeyValuePair<int, int> product in productQuantity)
-            {
-                int productId = product.Key;
-                int requestedQuantity = product.Value;
-                double priceOfThis = tmpProduct.getPrice() * requestedQuantity;
-                tmpProduct.findProductById(productId);
-                totalPrice = totalPrice + priceOfThis;
-
-            }
 
             bool result = order.createNewOrder(customer_first_name, customer_last_name, customer_phone, customer_address, customer_email, totalPrice, paymentMethodSelectionComboBox.Text, productQuantity);
             if (result)
