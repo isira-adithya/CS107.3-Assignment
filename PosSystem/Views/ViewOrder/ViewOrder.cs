@@ -73,7 +73,7 @@ namespace PosSystem.Views.ViewOrder
             cEmailLabel.Text = order.getCustomerEmail();
             cAddressLabel.Text = order.getCustomerAddress();
             cPhoneLabel.Text = order.getCustomerPhone();
-            totalPriceLabel.Text = order.getDateTime();
+            totalPriceLabel.Text = order.getTotalPrice().ToString();
             paymentMethodLabel.Text = order.getPaymentMethod();
             dateTimeLabel.Text = order.getDateTime();
 
